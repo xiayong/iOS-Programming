@@ -14,13 +14,32 @@
 		6164CB4A185CB83500CEA3CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6164CB49185CB83500CEA3CE /* main.m */; };
 		6164CB4E185CB83500CEA3CE /* XYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6164CB4D185CB83500CEA3CE /* XYAppDelegate.m */; };
 		6164CB51185CB83500CEA3CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6164CB4F185CB83500CEA3CE /* Main.storyboard */; };
-		6164CB54185CB83500CEA3CE /* XYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6164CB53185CB83500CEA3CE /* XYViewController.m */; };
+		6164CB54185CB83500CEA3CE /* XYFlowersListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6164CB53185CB83500CEA3CE /* XYFlowersListController.m */; };
 		6164CB56185CB83500CEA3CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6164CB55185CB83500CEA3CE /* Images.xcassets */; };
 		6164CB5D185CB83500CEA3CE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6164CB5C185CB83500CEA3CE /* XCTest.framework */; };
 		6164CB5E185CB83500CEA3CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6164CB3D185CB83500CEA3CE /* Foundation.framework */; };
 		6164CB5F185CB83500CEA3CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6164CB41185CB83500CEA3CE /* UIKit.framework */; };
 		6164CB67185CB83500CEA3CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6164CB65185CB83500CEA3CE /* InfoPlist.strings */; };
 		6164CB69185CB83500CEA3CE /* Flowers_ShopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6164CB68185CB83500CEA3CE /* Flowers_ShopTests.m */; };
+		617E8280185CBEB30058CC1F /* XYPropertiesLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 617E827F185CBEB30058CC1F /* XYPropertiesLoader.m */; };
+		617E8284185CDE1A0058CC1F /* app-config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 617E8283185CDE1A0058CC1F /* app-config.plist */; };
+		61810E22185F4A3B0027069D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61810E21185F4A3B0027069D /* CFNetwork.framework */; };
+		61810E3C1860B75E0027069D /* Base64Transcoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E331860B75E0027069D /* Base64Transcoder.m */; };
+		61810E3D1860B75E0027069D /* HSK_CFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E351860B75E0027069D /* HSK_CFUtilities.m */; };
+		61810E3E1860B75E0027069D /* NSData+Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E371860B75E0027069D /* NSData+Base64Additions.m */; };
+		61810E3F1860B75E0027069D /* NSStream+SKPSMTPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E391860B75E0027069D /* NSStream+SKPSMTPExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		61810E401860B75E0027069D /* SKPSMTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E3B1860B75E0027069D /* SKPSMTPMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		61810E441861D4F00027069D /* XYProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E431861D4F00027069D /* XYProduct.m */; };
+		61810E471861D69E0027069D /* XYOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E461861D69E0027069D /* XYOrder.m */; };
+		61810E4A1861D7900027069D /* XYItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E491861D7900027069D /* XYItem.m */; };
+		61810E4F1862264E0027069D /* XYAddProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E4E1862264E0027069D /* XYAddProductsViewController.m */; };
+		61810E5E1862F9C20027069D /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E541862F9C20027069D /* FMDatabase.m */; };
+		61810E5F1862F9C20027069D /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E561862F9C20027069D /* FMDatabaseAdditions.m */; };
+		61810E601862F9C20027069D /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E581862F9C20027069D /* FMDatabasePool.m */; };
+		61810E611862F9C20027069D /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E5A1862F9C20027069D /* FMDatabaseQueue.m */; };
+		61810E631862F9C20027069D /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E5D1862F9C20027069D /* FMResultSet.m */; };
+		61810E66186327F80027069D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 61810E64186327330027069D /* libsqlite3.dylib */; };
+		61810E6918632B010027069D /* XYFlosersShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 61810E6818632B010027069D /* XYFlosersShopModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +64,51 @@
 		6164CB4C185CB83500CEA3CE /* XYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYAppDelegate.h; sourceTree = "<group>"; };
 		6164CB4D185CB83500CEA3CE /* XYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYAppDelegate.m; sourceTree = "<group>"; };
 		6164CB50185CB83500CEA3CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6164CB52185CB83500CEA3CE /* XYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYViewController.h; sourceTree = "<group>"; };
-		6164CB53185CB83500CEA3CE /* XYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYViewController.m; sourceTree = "<group>"; };
+		6164CB52185CB83500CEA3CE /* XYFlowersListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYFlowersListController.h; sourceTree = "<group>"; };
+		6164CB53185CB83500CEA3CE /* XYFlowersListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYFlowersListController.m; sourceTree = "<group>"; };
 		6164CB55185CB83500CEA3CE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6164CB5B185CB83500CEA3CE /* Flowers ShopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flowers ShopTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6164CB5C185CB83500CEA3CE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6164CB64185CB83500CEA3CE /* Flowers ShopTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Flowers ShopTests-Info.plist"; sourceTree = "<group>"; };
 		6164CB66185CB83500CEA3CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6164CB68185CB83500CEA3CE /* Flowers_ShopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Flowers_ShopTests.m; sourceTree = "<group>"; };
+		617E827E185CBEB30058CC1F /* XYPropertiesLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPropertiesLoader.h; sourceTree = "<group>"; };
+		617E827F185CBEB30058CC1F /* XYPropertiesLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPropertiesLoader.m; sourceTree = "<group>"; };
+		617E8282185CC1F80058CC1F /* XYConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYConstants.h; sourceTree = "<group>"; };
+		617E8283185CDE1A0058CC1F /* app-config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "app-config.plist"; sourceTree = "<group>"; };
+		61810E21185F4A3B0027069D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		61810E321860B75E0027069D /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		61810E331860B75E0027069D /* Base64Transcoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64Transcoder.m; sourceTree = "<group>"; };
+		61810E341860B75E0027069D /* HSK_CFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSK_CFUtilities.h; sourceTree = "<group>"; };
+		61810E351860B75E0027069D /* HSK_CFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSK_CFUtilities.m; sourceTree = "<group>"; };
+		61810E361860B75E0027069D /* NSData+Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64Additions.h"; sourceTree = "<group>"; };
+		61810E371860B75E0027069D /* NSData+Base64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64Additions.m"; sourceTree = "<group>"; };
+		61810E381860B75E0027069D /* NSStream+SKPSMTPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSStream+SKPSMTPExtensions.h"; sourceTree = "<group>"; };
+		61810E391860B75E0027069D /* NSStream+SKPSMTPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSStream+SKPSMTPExtensions.m"; sourceTree = "<group>"; };
+		61810E3A1860B75E0027069D /* SKPSMTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPSMTPMessage.h; sourceTree = "<group>"; };
+		61810E3B1860B75E0027069D /* SKPSMTPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKPSMTPMessage.m; sourceTree = "<group>"; };
+		61810E421861D4F00027069D /* XYProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYProduct.h; sourceTree = "<group>"; };
+		61810E431861D4F00027069D /* XYProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYProduct.m; sourceTree = "<group>"; };
+		61810E451861D69E0027069D /* XYOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYOrder.h; sourceTree = "<group>"; };
+		61810E461861D69E0027069D /* XYOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYOrder.m; sourceTree = "<group>"; };
+		61810E481861D7900027069D /* XYItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYItem.h; sourceTree = "<group>"; };
+		61810E491861D7900027069D /* XYItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYItem.m; sourceTree = "<group>"; };
+		61810E4B1861EC3A0027069D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		61810E4D1862264E0027069D /* XYAddProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYAddProductsViewController.h; sourceTree = "<group>"; };
+		61810E4E1862264E0027069D /* XYAddProductsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYAddProductsViewController.m; sourceTree = "<group>"; };
+		61810E531862F9C20027069D /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		61810E541862F9C20027069D /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		61810E551862F9C20027069D /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		61810E561862F9C20027069D /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		61810E571862F9C20027069D /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		61810E581862F9C20027069D /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		61810E591862F9C20027069D /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		61810E5A1862F9C20027069D /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		61810E5C1862F9C20027069D /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		61810E5D1862F9C20027069D /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		61810E64186327330027069D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		61810E6718632B010027069D /* XYFlosersShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYFlosersShopModel.h; sourceTree = "<group>"; };
+		61810E6818632B010027069D /* XYFlosersShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYFlosersShopModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61810E66186327F80027069D /* libsqlite3.dylib in Frameworks */,
+				61810E22185F4A3B0027069D /* CFNetwork.framework in Frameworks */,
 				6164CB40185CB83500CEA3CE /* CoreGraphics.framework in Frameworks */,
 				6164CB42185CB83500CEA3CE /* UIKit.framework in Frameworks */,
 				6164CB3E185CB83500CEA3CE /* Foundation.framework in Frameworks */,
@@ -101,6 +159,9 @@
 		6164CB3C185CB83500CEA3CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				61810E64186327330027069D /* libsqlite3.dylib */,
+				61810E4B1861EC3A0027069D /* QuartzCore.framework */,
+				61810E21185F4A3B0027069D /* CFNetwork.framework */,
 				6164CB3D185CB83500CEA3CE /* Foundation.framework */,
 				6164CB3F185CB83500CEA3CE /* CoreGraphics.framework */,
 				6164CB41185CB83500CEA3CE /* UIKit.framework */,
@@ -112,11 +173,21 @@
 		6164CB43185CB83500CEA3CE /* Flowers Shop */ = {
 			isa = PBXGroup;
 			children = (
+				61810E521862F9AE0027069D /* FMDB */,
+				61810E411861D4AE0027069D /* Model */,
+				617E8285185DF88A0058CC1F /* SKPSMTP */,
 				6164CB4C185CB83500CEA3CE /* XYAppDelegate.h */,
 				6164CB4D185CB83500CEA3CE /* XYAppDelegate.m */,
 				6164CB4F185CB83500CEA3CE /* Main.storyboard */,
-				6164CB52185CB83500CEA3CE /* XYViewController.h */,
-				6164CB53185CB83500CEA3CE /* XYViewController.m */,
+				6164CB52185CB83500CEA3CE /* XYFlowersListController.h */,
+				6164CB53185CB83500CEA3CE /* XYFlowersListController.m */,
+				617E8282185CC1F80058CC1F /* XYConstants.h */,
+				617E827E185CBEB30058CC1F /* XYPropertiesLoader.h */,
+				617E827F185CBEB30058CC1F /* XYPropertiesLoader.m */,
+				61810E4D1862264E0027069D /* XYAddProductsViewController.h */,
+				61810E4E1862264E0027069D /* XYAddProductsViewController.m */,
+				61810E6718632B010027069D /* XYFlosersShopModel.h */,
+				61810E6818632B010027069D /* XYFlosersShopModel.m */,
 				6164CB55185CB83500CEA3CE /* Images.xcassets */,
 				6164CB44185CB83500CEA3CE /* Supporting Files */,
 			);
@@ -130,6 +201,7 @@
 				6164CB46185CB83500CEA3CE /* InfoPlist.strings */,
 				6164CB49185CB83500CEA3CE /* main.m */,
 				6164CB4B185CB83500CEA3CE /* Flowers Shop-Prefix.pch */,
+				617E8283185CDE1A0058CC1F /* app-config.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,6 +222,53 @@
 				6164CB65185CB83500CEA3CE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		617E8285185DF88A0058CC1F /* SKPSMTP */ = {
+			isa = PBXGroup;
+			children = (
+				61810E321860B75E0027069D /* Base64Transcoder.h */,
+				61810E331860B75E0027069D /* Base64Transcoder.m */,
+				61810E341860B75E0027069D /* HSK_CFUtilities.h */,
+				61810E351860B75E0027069D /* HSK_CFUtilities.m */,
+				61810E361860B75E0027069D /* NSData+Base64Additions.h */,
+				61810E371860B75E0027069D /* NSData+Base64Additions.m */,
+				61810E381860B75E0027069D /* NSStream+SKPSMTPExtensions.h */,
+				61810E391860B75E0027069D /* NSStream+SKPSMTPExtensions.m */,
+				61810E3A1860B75E0027069D /* SKPSMTPMessage.h */,
+				61810E3B1860B75E0027069D /* SKPSMTPMessage.m */,
+			);
+			name = SKPSMTP;
+			sourceTree = "<group>";
+		};
+		61810E411861D4AE0027069D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				61810E421861D4F00027069D /* XYProduct.h */,
+				61810E431861D4F00027069D /* XYProduct.m */,
+				61810E451861D69E0027069D /* XYOrder.h */,
+				61810E461861D69E0027069D /* XYOrder.m */,
+				61810E481861D7900027069D /* XYItem.h */,
+				61810E491861D7900027069D /* XYItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		61810E521862F9AE0027069D /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				61810E531862F9C20027069D /* FMDatabase.h */,
+				61810E541862F9C20027069D /* FMDatabase.m */,
+				61810E551862F9C20027069D /* FMDatabaseAdditions.h */,
+				61810E561862F9C20027069D /* FMDatabaseAdditions.m */,
+				61810E571862F9C20027069D /* FMDatabasePool.h */,
+				61810E581862F9C20027069D /* FMDatabasePool.m */,
+				61810E591862F9C20027069D /* FMDatabaseQueue.h */,
+				61810E5A1862F9C20027069D /* FMDatabaseQueue.m */,
+				61810E5C1862F9C20027069D /* FMResultSet.h */,
+				61810E5D1862F9C20027069D /* FMResultSet.m */,
+			);
+			name = FMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +350,7 @@
 			files = (
 				6164CB56185CB83500CEA3CE /* Images.xcassets in Resources */,
 				6164CB48185CB83500CEA3CE /* InfoPlist.strings in Resources */,
+				617E8284185CDE1A0058CC1F /* app-config.plist in Resources */,
 				6164CB51185CB83500CEA3CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,9 +370,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61810E441861D4F00027069D /* XYProduct.m in Sources */,
+				61810E6918632B010027069D /* XYFlosersShopModel.m in Sources */,
+				61810E3D1860B75E0027069D /* HSK_CFUtilities.m in Sources */,
+				61810E3F1860B75E0027069D /* NSStream+SKPSMTPExtensions.m in Sources */,
+				61810E5E1862F9C20027069D /* FMDatabase.m in Sources */,
+				61810E4A1861D7900027069D /* XYItem.m in Sources */,
+				61810E631862F9C20027069D /* FMResultSet.m in Sources */,
+				61810E401860B75E0027069D /* SKPSMTPMessage.m in Sources */,
+				61810E471861D69E0027069D /* XYOrder.m in Sources */,
+				617E8280185CBEB30058CC1F /* XYPropertiesLoader.m in Sources */,
+				61810E4F1862264E0027069D /* XYAddProductsViewController.m in Sources */,
 				6164CB4A185CB83500CEA3CE /* main.m in Sources */,
-				6164CB54185CB83500CEA3CE /* XYViewController.m in Sources */,
+				61810E3E1860B75E0027069D /* NSData+Base64Additions.m in Sources */,
+				6164CB54185CB83500CEA3CE /* XYFlowersListController.m in Sources */,
+				61810E3C1860B75E0027069D /* Base64Transcoder.m in Sources */,
+				61810E601862F9C20027069D /* FMDatabasePool.m in Sources */,
+				61810E611862F9C20027069D /* FMDatabaseQueue.m in Sources */,
 				6164CB4E185CB83500CEA3CE /* XYAppDelegate.m in Sources */,
+				61810E5F1862F9C20027069D /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +597,7 @@
 				6164CB6E185CB83500CEA3CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6164CB6F185CB83500CEA3CE /* Build configuration list for PBXNativeTarget "Flowers ShopTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +606,7 @@
 				6164CB71185CB83500CEA3CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

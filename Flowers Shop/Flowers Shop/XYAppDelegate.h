@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
++ (BOOL)loginStatus;
++ (void)setLoginStatus:(BOOL)status;
 @end

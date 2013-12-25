@@ -10,6 +10,16 @@
 
 @implementation XYAppDelegate
 
+static bool loginStatus = NO;
+
++ (BOOL)loginStatus {
+    return loginStatus;
+}
+
++ (void)setLoginStatus:(BOOL)status {
+    loginStatus = status;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
