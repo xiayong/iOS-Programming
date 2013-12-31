@@ -10,7 +10,7 @@
 #import "XYFlosersShopModel.h"
 
 @interface XYFlowersListController () <UIAlertViewDelegate>
-- (void)forwardToAddProductPage;
+- (void)forwardAddProductPage;
 @end
 
 @implementation XYFlowersListController
@@ -40,7 +40,7 @@ XYFlosersShopModel *model;
     // Dispose of any resources that can be recreated.
 }
 
-- (void)forwardToAddProductPage {
+- (void)forwardAddProductPage {
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *controller = [storyBoard instantiateViewControllerWithIdentifier:@"AddProduct"];
     [self.navigationController pushViewController:controller animated:YES];
@@ -52,10 +52,10 @@ XYFlosersShopModel *model;
         loginAlertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
         [loginAlertView show];
     } else
-        [self forwardToAddProductPage];
+        [self forwardAddProductPage];
 }
 
-- (IBAction)addToCartButtonTaped:(UIButton *)sender {
+- (IBAction)addProductToCartButtonTapped:(UIButton *)sender {
     UITableViewCell *currentCell = (UITableViewCell *)[[[sender superview] superview] superview];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:currentCell];
     XYProduct *product = [[model products] objectAtIndex:indexPath.row];
@@ -63,8 +63,17 @@ XYFlosersShopModel *model;
     NSLog(@"User add %@ to the cart.", product.prodname);
 }
 
-- (IBAction)deleteProductButtonTaped:(UIBarButtonItem *)sender {
+- (IBAction)deleteProductButtonTapped:(UIBarButtonItem *)sender {
     self.tableView.editing = !self.tableView.editing;
+}
+
+- (IBAction)cartButtonTapped:(UIBarButtonItem *)sender {
+}
+
+- (IBAction)searchButtonTapped:(UIBarButtonItem *)sender {
+}
+
+- (IBAction)markButtonTapped:(UIBarButtonItem *)sender {
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (0 != buttonIndex) {
@@ -76,7 +85,7 @@ XYFlosersShopModel *model;
             [XYAppDelegate setLoginStatus:YES];
             NSLog(@"Manager login successful.");
             self.navigationItem.leftBarButtonItem.enabled = YES;
-            [self forwardToAddProductPage];
+            [self forwardAddProductPage];
         }
         else {
             [[[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"User name and password do not match" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
