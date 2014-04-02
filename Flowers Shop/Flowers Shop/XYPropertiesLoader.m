@@ -28,7 +28,7 @@ static NSDictionary *appConfigDict;
     NSString *appConfigFilename = [[[NSBundle mainBundle] infoDictionary] objectForKey:@kApplicationConfigPropertyFilenameKey];
     NSString *appConfigFilepath = [[NSBundle mainBundle] pathForResource:appConfigFilename ofType:@"plist"];
     appConfigDict = [NSDictionary dictionaryWithContentsOfFile:appConfigFilepath];
-    NSLog(@"加载系统配置文件%@成功.", appConfigFilepath);
+    NSLog(@"Load the system configration file %@ successful.", appConfigFilepath);
 }
 
 - (id)propertyForKey:(NSString *)key {

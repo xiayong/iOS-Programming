@@ -11,7 +11,7 @@
 
 @interface XYFlowersListController : UITableViewController
 
-- (IBAction)addProduct:(UIBarButtonItem *)sender;
+
 - (IBAction)addProductToCartButtonTapped:(UIButton *)sender;
 - (IBAction)deleteProductButtonTapped:(UIBarButtonItem *)sender;
 

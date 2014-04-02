@@ -27,10 +27,35 @@ XYFlosersShopModel *model;
     model = [XYFlosersShopModel sharedModel];
     self.navigationController.toolbarHidden = NO;
     self.navigationItem.leftBarButtonItem.enabled = NO;
+    self.navigationController.toolbarHidden = YES;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStylePlain target:self action:@selector(loginButtonTapped)];
+}
+
+- (void)loginButtonTapped {
+    if (![XYAppDelegate loginStatus]) {
+        UIAlertView *loginAlertView = [[UIAlertView alloc] initWithTitle:@"Manager Login" message:@"Enter login and password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        loginAlertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+        [loginAlertView show];
+    } else
+        [self forwardAddProductPage];
+}
+
+- (void)logoutButtonTapped {
+    [XYAppDelegate setLoginStatus:NO];
+    NSLog(@"Manager logout successful.");
+    // 管理员登出后，显示登入按钮
+    self.navigationItem.leftBarButtonItem.enabled = NO;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStylePlain target:self action:@selector(loginButtonTapped)];
+    [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    // 如果管理员已经登入，显示登出按钮
+    if ([XYAppDelegate loginStatus]) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logoutButtonTapped)];
+    }
+    
     [self.tableView reloadData];
 }
 
@@ -46,13 +71,10 @@ XYFlosersShopModel *model;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (IBAction)addProduct:(UIBarButtonItem *)sender {
-    if (![XYAppDelegate loginStatus]) {
-        UIAlertView *loginAlertView = [[UIAlertView alloc] initWithTitle:@"Manager Login" message:@"Enter login and password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-        loginAlertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-        [loginAlertView show];
-    } else
-        [self forwardAddProductPage];
+- (void)forwardShoppingCartPage {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *controller = [storyBoard instantiateViewControllerWithIdentifier:@"ShoppingCart"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (IBAction)addProductToCartButtonTapped:(UIButton *)sender {
@@ -61,6 +83,7 @@ XYFlosersShopModel *model;
     XYProduct *product = [[model products] objectAtIndex:indexPath.row];
     [model addProductToCartWithProductid:product.prodid productCount:1];
     NSLog(@"User add %@ to the cart.", product.prodname);
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(forwardShoppingCartPage)];
 }
 
 - (IBAction)deleteProductButtonTapped:(UIBarButtonItem *)sender {
@@ -107,10 +130,8 @@ XYFlosersShopModel *model;
     XYProduct *product = [[model products] objectAtIndex:indexPath.row];
     UILabel *label = (UILabel *)[cell viewWithTag:1];
     label.text = [NSString stringWithFormat:@"%@ %.2f", product.prodname, product.prodprice.floatValue];
-    if ([XYAppDelegate loginStatus]) {
-        UIButton *button = (UIButton *)[cell viewWithTag:2];
-        button.hidden = YES;
-    }
+    
+    [cell viewWithTag:2].hidden = [XYAppDelegate loginStatus];
     
     return cell;
 }
