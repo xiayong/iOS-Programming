@@ -25,9 +25,7 @@ XYFlosersShopModel *model;
     
     propertiesLoder = [XYPropertiesLoader sharedPropertiesLoader];
     model = [XYFlosersShopModel sharedModel];
-    self.navigationController.toolbarHidden = NO;
     self.navigationItem.leftBarButtonItem.enabled = NO;
-    self.navigationController.toolbarHidden = YES;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStylePlain target:self action:@selector(loginButtonTapped)];
 }
 
@@ -50,6 +48,7 @@ XYFlosersShopModel *model;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.toolbarHidden = YES;
     [super viewWillAppear:animated];
     // 如果管理员已经登入，显示登出按钮
     if ([XYAppDelegate loginStatus]) {
@@ -90,14 +89,6 @@ XYFlosersShopModel *model;
     self.tableView.editing = !self.tableView.editing;
 }
 
-- (IBAction)cartButtonTapped:(UIBarButtonItem *)sender {
-}
-
-- (IBAction)searchButtonTapped:(UIBarButtonItem *)sender {
-}
-
-- (IBAction)markButtonTapped:(UIBarButtonItem *)sender {
-}
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (0 != buttonIndex) {
         NSString *username = [alertView textFieldAtIndex:0].text;

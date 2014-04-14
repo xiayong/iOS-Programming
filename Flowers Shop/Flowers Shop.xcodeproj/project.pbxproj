@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49B2C92018FC5B6100EBB0CC /* XYShoppingCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B2C91F18FC5B6100EBB0CC /* XYShoppingCartController.m */; };
 		6164CB3E185CB83500CEA3CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6164CB3D185CB83500CEA3CE /* Foundation.framework */; };
 		6164CB40185CB83500CEA3CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6164CB3F185CB83500CEA3CE /* CoreGraphics.framework */; };
 		6164CB42185CB83500CEA3CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6164CB41185CB83500CEA3CE /* UIKit.framework */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49B2C91E18FC5B6100EBB0CC /* XYShoppingCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYShoppingCartController.h; sourceTree = "<group>"; };
+		49B2C91F18FC5B6100EBB0CC /* XYShoppingCartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYShoppingCartController.m; sourceTree = "<group>"; };
 		6164CB3A185CB83500CEA3CE /* Flowers Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flowers Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6164CB3D185CB83500CEA3CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6164CB3F185CB83500CEA3CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -188,6 +191,8 @@
 				61810E4E1862264E0027069D /* XYAddProductsViewController.m */,
 				61810E6718632B010027069D /* XYFlosersShopModel.h */,
 				61810E6818632B010027069D /* XYFlosersShopModel.m */,
+				49B2C91E18FC5B6100EBB0CC /* XYShoppingCartController.h */,
+				49B2C91F18FC5B6100EBB0CC /* XYShoppingCartController.m */,
 				6164CB55185CB83500CEA3CE /* Images.xcassets */,
 				6164CB44185CB83500CEA3CE /* Supporting Files */,
 			);
@@ -378,6 +383,7 @@
 				61810E4A1861D7900027069D /* XYItem.m in Sources */,
 				61810E631862F9C20027069D /* FMResultSet.m in Sources */,
 				61810E401860B75E0027069D /* SKPSMTPMessage.m in Sources */,
+				49B2C92018FC5B6100EBB0CC /* XYShoppingCartController.m in Sources */,
 				61810E471861D69E0027069D /* XYOrder.m in Sources */,
 				617E8280185CBEB30058CC1F /* XYPropertiesLoader.m in Sources */,
 				61810E4F1862264E0027069D /* XYAddProductsViewController.m in Sources */,

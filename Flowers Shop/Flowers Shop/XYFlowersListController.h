@@ -15,8 +15,4 @@
 - (IBAction)addProductToCartButtonTapped:(UIButton *)sender;
 - (IBAction)deleteProductButtonTapped:(UIBarButtonItem *)sender;
 
-- (IBAction)cartButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)searchButtonTapped:(UIBarButtonItem *)sender;
-- (IBAction)markButtonTapped:(UIBarButtonItem *)sender;
-
 @end
