@@ -11,6 +11,6 @@
 @interface XYProduct : NSObject <NSCopying>
 @property (assign, nonatomic) NSUInteger prodid;
 @property (copy, nonatomic) NSString *prodname;
-@property (copy, nonatomic) NSNumber *prodprice;
-- (id)initWithProductid:(NSUInteger)prodid productName:(NSString *)prodname productPrice:(NSNumber *)prodprice;
+@property (copy, nonatomic) NSDecimalNumber *prodprice;
+- (id)initWithProductid:(NSUInteger)prodid productName:(NSString *)prodname productPrice:(NSDecimalNumber *)prodprice;
 @end

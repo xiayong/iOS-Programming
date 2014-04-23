@@ -12,6 +12,9 @@
 @interface XYFlosersShopModel ()
 + (void)initDB;
 + (void)syncData;
+- (BOOL)addItem:(XYItem *)item;
+- (BOOL)updateItem:(XYItem *)item;
+- (BOOL)deleteItem:(XYItem *)item;
 @end
 
 @implementation XYFlosersShopModel
@@ -23,13 +26,11 @@ static FMDatabase *db;
 static NSMutableArray *products;
 static NSMutableArray *orders;
 static NSMutableArray *items;
-static NSMutableDictionary *cart;
 
 
 + (void)initialize {
     if (self == [XYFlosersShopModel class]) {
         [XYFlosersShopModel initDB];
-        cart = [[NSMutableDictionary alloc] init];
         instance = [[XYFlosersShopModel alloc] init];
     }
 }
@@ -51,12 +52,20 @@ static NSMutableDictionary *cart;
     dbFilePath = [dbFilePath stringByAppendingPathComponent:[propertiesLoader propertyForKey:@kConfigDBFilenameKey defaultValue:@"mainDB.sqllite3"]];
     db = [FMDatabase databaseWithPath:dbFilePath];
     [db open];
-    [db executeUpdate:@"CREATE TABLE IF NOT EXISTS Products(prodid INTEGER PRIMARY KEY AUTOINCREMENT, prodname VARCHAR(40) NOT NULL UNIQUE, prodprice DECIMAL(7, 2))"];
+    [db executeUpdate:@"CREATE TABLE IF NOT EXISTS Products(prodid INTEGER PRIMARY KEY AUTOINCREMENT, prodname VARCHAR(40) NOT NULL UNIQUE, prodprice DECIMAL(7, 2) NOT NULL)"];
     [db executeUpdate:@"CREATE TABLE IF NOT EXISTS Orders(oid INTEGER PRIMARY KEY AUTOINCREMENT, firstname VARCHAR(40) NOT NULL, lastname VARCHAR(40) NOT NULL, email VARCHAR(30) NOT NULL, phone VARCHAR(20) NOT NULL, purchaseDate DATE NOT NULL)"];
-    [db executeUpdate:@"CREATE TABLE IF NOT EXISTS Items(oid INTEGER NOT NULL, pid INTEGER NOT NULL, count INTEGER NO NULL, FOREIGN KEY(oid) REFERENCES Orders(oid), FOREIGN KEY(pid) REFERENCES Products(prodid))"];
+    [db executeUpdate:@"CREATE TABLE IF NOT EXISTS Items(oid INTEGER, pid INTEGER NOT NULL, count INTEGER NOT NULL, FOREIGN KEY(oid) REFERENCES Orders(oid), FOREIGN KEY(pid) REFERENCES Products(prodid))"];
     [db close];
     NSLog(@"Load the %@ db file successful.", dbFilePath);
     [XYFlosersShopModel syncData];
+}
+
+- (NSArray *)products {
+    return [products deepCopy];
+}
+
+- (NSArray *)cart {
+    return [items deepCopy];
 }
 
 - (XYProduct *)productIFExists:(XYProduct *)product {
@@ -94,10 +103,6 @@ static NSMutableDictionary *cart;
     [db close];
     [XYFlosersShopModel syncData];
     return b;
-}
-
-- (NSArray *)products {
-    return [products copy];
 }
 
 - (BOOL)deleteProductWithProductid:(NSUInteger)pid {
@@ -147,12 +152,13 @@ static NSMutableDictionary *cart;
     }
     [resultSet close];
     
-    sql = @"SELECT oid, pid, count FROM Items";
+    // 加载未完成的订单
+    sql = @"SELECT oid, pid, count FROM Items WHERE oid is NULL";
     resultSet = [db executeQuery:sql];
     items = [[NSMutableArray alloc] init];
     while ([resultSet next]) {
         XYItem *item = [[XYItem alloc] init];
-        item.oid = [resultSet intForColumn:@"oid"];
+        item.oid = [resultSet columnIsNull:@"oid"] ? NSNotFound : [resultSet intForColumn:@"oid"];
         item.pid = [resultSet intForColumn:@"pid"];
         item.count = [resultSet intForColumn:@"count"];
         [items addObject:item];
@@ -164,12 +170,90 @@ static NSMutableDictionary *cart;
     NSLog(@"Sysn all data successful.");
 }
 
-- (NSDictionary *)cart {
-    return [cart copy];
+
+
+- (void)addProductToCartWithProductid:(NSUInteger)pid {
+    XYItem *item = nil;
+    for (XYItem *i in items)
+        if (i.pid == pid) {
+            item = i;
+            break;
+        }
+    if (item) {
+        ++ item.count;
+        [self updateItem:item];
+    }
+    else {
+        item = [[XYItem alloc]initWithOrderid:NSNotFound productid:pid count:1];
+        [items addObject:item];
+        [self addItem:item];
+    }
 }
 
-- (void)addProductToCartWithProductid:(NSUInteger)pid productCount:(NSUInteger)count {
-    [cart setObject:[NSNumber numberWithInteger:count] forKey:[NSNumber numberWithInteger:pid]];
+- (BOOL)addItem:(XYItem *)item {
+    NSString *sql = [NSString stringWithFormat:@"INSERT INTO Items(oid, pid, count) VALUES(%@, ?, ?)", item.oid != NSNotFound ? @"?" : @"NULL"];
+    BOOL b = NO;
+    [db open];
+    if (item.oid != NSNotFound)
+        b = [db executeUpdate:sql, [NSNumber numberWithInteger:item.oid], [NSNumber numberWithInteger:item.pid], [NSNumber numberWithInteger:item.count]];
+    else
+        b = [db executeUpdate:sql, [NSNumber numberWithInteger:item.pid], [NSNumber numberWithInteger:item.count]];
+    [db close];
+    return b;
+}
+
+- (BOOL)updateItem:(XYItem *)item {
+    NSString *sql = [NSString stringWithFormat:@"UPDATE Items SET oid = %@, count = ? WHERE pid = ? AND oid IS NULL", item.oid != NSNotFound ? @"?" : @"NULL"];
+    BOOL b = NO;
+    [db open];
+    if (item.oid != NSNotFound)
+        b = [db executeUpdate:sql, [NSNumber numberWithInteger:item.oid], [NSNumber numberWithInteger:item.count], [NSNumber numberWithInteger:item.pid]];
+    else
+        b = [db executeUpdate:sql, [NSNumber numberWithInteger:item.count], [NSNumber numberWithInteger:item.pid]];
+    [db close];
+    return b;
+}
+
+- (BOOL)deleteItem:(XYItem *)item {
+    NSString *sql = [NSString stringWithFormat:@"DELETE FROM Items WHERE pid = ? AND oid %@", item.oid != NSNotFound ? @"= ?" : @"IS NULL"];
+    BOOL b = NO;
+    [db open];
+    if (item.oid != NSNotFound)
+        b = [db executeUpdate:sql, [NSNumber numberWithInteger:item.pid], [NSNumber numberWithInteger:item.oid]];
+    else
+        b = [db executeUpdate:sql, [NSNumber numberWithInteger:item.pid]];
+    [db close];
+    return NO;
+}
+
+- (XYProduct *)findProductById:(NSUInteger)pid {
+    XYProduct *product = nil;
+    [db open];
+    FMResultSet *resultSet = [db executeQuery:@"SELECT prodid, prodname, prodprice FROM Products WHERE prodid = ?", [NSNumber numberWithInteger:pid]];
+    if ([resultSet next]) {
+        product = [[XYProduct alloc] init];
+        product.prodid = [resultSet intForColumn:@"prodid"];
+        product.prodname = [resultSet stringForColumn:@"prodname"];
+        product.prodprice = [resultSet objectForColumnName:@"prodprice"];
+    }
+    [db close];
+    return product;
+}
+
+- (void)modifyItem:(XYItem *)newItem {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"pid = %lu", (unsigned long)newItem.pid];
+    XYItem *item = [[items filteredArrayUsingPredicate:predicate] objectAtIndex:0];
+    if (item) {
+        if (newItem.count == 0) {
+            [items removeObject:item];
+            [self deleteItem:item];
+            return;
+        }
+        if (newItem.oid != NSNotFound)
+            item.oid = newItem.oid;
+        item.count = newItem.count;
+        [self updateItem:item];
+    }
 }
 
 @end

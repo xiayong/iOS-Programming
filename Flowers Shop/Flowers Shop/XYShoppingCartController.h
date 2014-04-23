@@ -18,5 +18,7 @@
 - (IBAction)searchButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)cartButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)shareButtonTapped:(UIBarButtonItem *)sender;
+- (IBAction)textFieldDidBeginEditing:(UITextField *)sender;
+- (IBAction)textFieldDidEndOnExit:(UITextField *)sender;
 
 @end

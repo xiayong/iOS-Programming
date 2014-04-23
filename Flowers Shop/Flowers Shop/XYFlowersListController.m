@@ -48,7 +48,6 @@ XYFlosersShopModel *model;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.navigationController.toolbarHidden = YES;
     [super viewWillAppear:animated];
     // 如果管理员已经登入，显示登出按钮
     if ([XYAppDelegate loginStatus]) {
@@ -80,7 +79,7 @@ XYFlosersShopModel *model;
     UITableViewCell *currentCell = (UITableViewCell *)[[[sender superview] superview] superview];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:currentCell];
     XYProduct *product = [[model products] objectAtIndex:indexPath.row];
-    [model addProductToCartWithProductid:product.prodid productCount:1];
+    [model addProductToCartWithProductid:product.prodid];
     NSLog(@"User add %@ to the cart.", product.prodname);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(forwardShoppingCartPage)];
 }
@@ -120,7 +119,7 @@ XYFlosersShopModel *model;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     XYProduct *product = [[model products] objectAtIndex:indexPath.row];
     UILabel *label = (UILabel *)[cell viewWithTag:1];
-    label.text = [NSString stringWithFormat:@"%@ %.2f", product.prodname, product.prodprice.floatValue];
+    label.text = [NSString stringWithFormat:@"%@  %.2f", product.prodname, [product.prodprice floatValue]];
     
     [cell viewWithTag:2].hidden = [XYAppDelegate loginStatus];
     

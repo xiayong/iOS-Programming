@@ -60,8 +60,9 @@ XYFlosersShopModel *model;
         [alertView show];
         return;
     }
-    price = roundf(price * 100.0) / 100.0;
-    self.currentProduct = [[XYProduct alloc] initWithProductid:0 productName:name productPrice:[NSNumber numberWithFloat:price]];
+    //price = roundf(price * 100.0) / 100.0;
+    self.currentProduct = [[XYProduct alloc] initWithProductid:0 productName:name productPrice:[NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%.2f", price]]];
+    
     XYProduct *oldProduct = [model productIFExists:self.currentProduct];
     if (oldProduct) {
         self.currentProduct.prodid = oldProduct.prodid;

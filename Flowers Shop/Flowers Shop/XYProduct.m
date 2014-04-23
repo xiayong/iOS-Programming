@@ -10,7 +10,7 @@
 
 @implementation XYProduct
 
-- (id)initWithProductid:(NSUInteger)prodid productName:(NSString *)prodname productPrice:(NSNumber *)prodprice {
+- (id)initWithProductid:(NSUInteger)prodid productName:(NSString *)prodname productPrice:(NSDecimalNumber *)prodprice {
     if (self = [super init]) {
         _prodid = prodid;
         _prodname = prodname;

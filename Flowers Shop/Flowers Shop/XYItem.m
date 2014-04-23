@@ -24,4 +24,8 @@
     return [[XYItem allocWithZone:zone] initWithOrderid:_oid productid:_pid count:_count];
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"[oid:%lu, pid:%lu, count:%lu]", (unsigned long)self.oid, (unsigned long)self.pid, (unsigned long)self.count];
+}
+
 @end

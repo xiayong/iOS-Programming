@@ -11,13 +11,16 @@
 #import "XYProduct.h"
 #import "XYOrder.h"
 #import "XYItem.h"
+#import "NSArray+DeepCopy.h"
 
 @interface XYFlosersShopModel : NSObject
 + (XYFlosersShopModel *)sharedModel;
-- (XYProduct *)productIFExists:(XYProduct *) product;
+- (XYProduct *)productIFExists:(XYProduct *)product;
 - (BOOL)addProduct:(XYProduct *)product;
 - (NSArray *)products;
 - (BOOL)deleteProductWithProductid:(NSUInteger)pid;
-- (NSDictionary *)cart;
-- (void)addProductToCartWithProductid:(NSUInteger)pid productCount:(NSUInteger)count;
+- (NSArray *)cart;
+- (void)addProductToCartWithProductid:(NSUInteger)pid;
+- (XYProduct *)findProductById:(NSUInteger)pid;
+- (void)modifyItem:(XYItem *)item;
 @end
