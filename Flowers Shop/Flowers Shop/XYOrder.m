@@ -26,4 +26,8 @@
     return [[XYOrder allocWithZone:zone] initWithOrderid:_oid firstname:_firstname lastname:_lastname email:_email phone:_phone purchaseDate:_purchaseDate];
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"[oid:%lu, firstname:%@, lastname:%@,email:%@,phone:%@,purchaseDate:%@]", (unsigned long)_oid, _firstname, _lastname, _email, _phone, _purchaseDate.description];
+}
+
 @end

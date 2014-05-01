@@ -11,6 +11,7 @@
 
 #define kRightNavigationButtonSave      "Save"
 #define kRightNavigationButtonDone      "Done"
+#define kDateformatter                  "yyyy-MM-dd"
 
 @interface XYShoppingCartController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 -(void)itemEditButtonTapped:(UIButton *)button;
@@ -49,6 +50,49 @@ XYFlosersShopModel *model;
             if ([[self valueForKeyPath:textField] respondsToSelector:@selector(resignFirstResponder)])
                 [[self valueForKeyPath:textField] resignFirstResponder];
         self.navigationItem.rightBarButtonItem.title = @kRightNavigationButtonSave;
+    } else {
+        NSString *firstName = [self.firstNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *lastName = [self.lastNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *email = [self.emailAddressTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *contactNo = [self.contactNoTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *purchasedDate = self.puchasedDateTextField.text;
+        if (firstName.length == 0) {
+            [[[UIAlertView alloc] initWithTitle:@"Incomplete information" message:@"First name could not be null." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            return;
+        }
+        if (lastName.length == 0) {
+            [[[UIAlertView alloc] initWithTitle:@"Incomplete information" message:@"Last name could not be nil" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            return;
+        }
+        
+        NSString *emailRegex = @"^\\w+((\\-\\w+)|(\\.\\w+))*@[A-Za-z0-9]+((\\.|\\-)[A-Za-z0-9]+)*.[A-Za-z0-9]+$";
+        NSPredicate *emailPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+        if (![emailPredicate evaluateWithObject:email]) {
+            [[[UIAlertView alloc] initWithTitle:@"Incomplete information" message:@"Email invalid" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            return;
+        }
+        NSString *parten = @"^[+]?[0-9]{5,15}";
+        NSPredicate *contactNoPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", parten];
+        if (![contactNoPredicate evaluateWithObject:contactNo]) {
+            [[[UIAlertView alloc] initWithTitle:@"Incomplete information" message:@"Contract No invalid" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            return;
+        }
+        if (purchasedDate.length == 0) {
+            [[[UIAlertView alloc] initWithTitle:@"Incomplete information" message:@"Purchased date could not be nil" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+            return;
+        }
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @kDateformatter;
+        
+        XYOrder *neworder = [[XYOrder alloc] initWithOrderid:NSNotFound firstname:firstName lastname:lastName email:email phone:contactNo purchaseDate:[formatter dateFromString:purchasedDate]];
+        NSLog(@"User begin settlement: %@", neworder.description);
+        BOOL b = [model settlement:neworder];
+        NSLog(@"User settlement %@.", b ? @"successful" : @"failed");
+        [[[UIAlertView alloc] initWithTitle:@"Settlement Result" message:[NSString stringWithFormat:@"Settlement %@.", b ? @"successful" : @"failed"] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        if (b) {
+            [self.shoppingCartTableView reloadData];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
     }
 }
 
@@ -151,7 +195,7 @@ XYFlosersShopModel *model;
         UIDatePicker *datePicker = (UIDatePicker *)sender.inputView;
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         //formatter.dateStyle = NSDateFormatterLongStyle;
-        formatter.dateFormat = @"yyyy-MM-dd";
+        formatter.dateFormat = @kDateformatter;
         sender.text = [formatter stringFromDate:datePicker.date];
     }
     

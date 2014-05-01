@@ -8,13 +8,17 @@
 
 #import "XYFlosersShopModel.h"
 #import "FMDatabase.h"
+#import "SKPSMTPMessage.h"
 
-@interface XYFlosersShopModel ()
+@interface XYFlosersShopModel () <SKPSMTPMessageDelegate>
 + (void)initDB;
 + (void)syncData;
 - (BOOL)addItem:(XYItem *)item;
 - (BOOL)updateItem:(XYItem *)item;
 - (BOOL)deleteItem:(XYItem *)item;
+
+-(void)messageSent:(SKPSMTPMessage *)message;
+-(void)messageFailed:(SKPSMTPMessage *)message error:(NSError *)error;
 @end
 
 @implementation XYFlosersShopModel
@@ -254,6 +258,58 @@ static NSMutableArray *items;
         item.count = newItem.count;
         [self updateItem:item];
     }
+}
+
+- (BOOL)settlement:(XYOrder *)order {
+    NSString *order_sql = @"INSERT INTO Orders(firstname, lastname, email, phone, purchaseDate) VALUES(?,?,?,?,?)";
+    NSString *item_sql = @"UPDATE Items SET oid = ? WHERE pid = ? AND oid IS NULL";
+    BOOL success = NO;
+    @try {
+        [db open];
+        [db beginTransaction];
+        [db executeUpdate:order_sql, order.firstname, order.lastname, order.email, order.phone, order.purchaseDate];
+        order.oid = (NSUInteger)[db lastInsertRowId];
+        for (XYItem *item in items)
+            [db executeUpdate:item_sql, [NSNumber numberWithInteger:order.oid], [NSNumber numberWithInteger:item.pid]];
+        [db commit];
+        [items removeAllObjects];
+        success = YES;
+    }
+    @catch (NSException *exception) {
+        success = NO;
+        NSLog(@"%@:%@", exception.name, exception.description);
+        [db rollback];
+    }
+    @finally {
+        [db close];
+    }
+    
+    if (success) {
+        SKPSMTPMessage *message = [[SKPSMTPMessage alloc] init];
+        message.requiresAuth = [@"YES" isEqualToString:[propertiesLoader propertyForKey:@kEmailRequiresAuth]];
+        message.relayHost = [propertiesLoader propertyForKey:@kEmailSMTPHost];
+        message.relayPorts = @[[propertiesLoader propertyForKey:@kEmailPort]];
+        if (message.requiresAuth) {
+            message.login = [propertiesLoader propertyForKey:@kEmalFromAccount];
+            message.pass = [propertiesLoader propertyForKey:@kEmailPassword];
+        }
+        message.toEmail = order.email;
+        message.fromEmail = [propertiesLoader propertyForKey:@kEmalFromAccount];
+        message.subject = @"Hi Your shopping list";
+        message.parts = @[@{kSKPSMTPPartMessageKey: @"Here is your list of goods"}];
+        message.validateSSLChain = [@"YES" isEqualToString:[propertiesLoader propertyForKey:@kEmailValidateSSLChain]];
+        message.delegate = self;
+        [message send];
+    }
+    
+    return success;
+}
+
+-(void)messageSent:(SKPSMTPMessage *)message {
+    NSLog(@"%@", message.description);
+}
+-(void)messageFailed:(SKPSMTPMessage *)message error:(NSError *)error {
+    NSLog(@"Send mail to custom failed: %@", error.description);
 }
 
 @end

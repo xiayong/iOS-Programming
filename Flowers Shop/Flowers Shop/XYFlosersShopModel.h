@@ -23,4 +23,5 @@
 - (void)addProductToCartWithProductid:(NSUInteger)pid;
 - (XYProduct *)findProductById:(NSUInteger)pid;
 - (void)modifyItem:(XYItem *)item;
+- (BOOL)settlement:(XYOrder *)order;
 @end

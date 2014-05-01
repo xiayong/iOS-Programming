@@ -3,12 +3,24 @@
 <plist version="1.0">
 <dict>
 	<key>DB File Name</key>
-	<string>mainDB.sqllite3</string>
+	<string>mainDB.sqlite</string>
 	<key>DB File Directory</key>
 	<string>Data</string>
 	<key>Manager username</key>
 	<string>root</string>
 	<key>Manager password</key>
 	<string>root</string>
+	<key>Emal From Account</key>
+	<string></string>
+	<key>Email Password</key>
+	<string></string>
+	<key>Email SMTP Host</key>
+	<string></string>
+	<key>Email Requires Auth</key>
+	<string>YES</string>
+	<key>Email Port</key>
+	<integer>0</integer>
+	<key>Email ValidateSSLChain</key>
+	<string>YES</string>
 </dict>
 </plist>
