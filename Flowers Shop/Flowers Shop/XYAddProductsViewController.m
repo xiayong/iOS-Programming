@@ -76,7 +76,10 @@ XYFlosersShopModel *model;
 - (void)saveWithReplace:(BOOL)replace {
     BOOL b = [model addProduct:self.currentProduct];
     NSLog(@"%@ the product:%@ %@", replace ? @"Replace" : @"Add" , self.currentProduct.description, b ? @"successful" : @"failed");
-    [self.navigationController popViewControllerAnimated:YES];
+    [[[UIAlertView alloc] initWithTitle:@"Success" message:@"Add product successful." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    self.flowerNameLabel.text = @"";
+    self.flowerPriceLabel.text = @"";
+    //[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {

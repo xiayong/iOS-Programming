@@ -9,6 +9,10 @@
 #import "XYFlowersListController.h"
 #import "XYFlosersShopModel.h"
 
+#define kRightButtonTextLogin       "Login"
+#define kRightButtonTextLogout      "Logout"
+#define kRightButtontextCart        "Cart"
+
 @interface XYFlowersListController () <UIAlertViewDelegate>
 - (void)forwardAddProductPage;
 @end
@@ -26,34 +30,35 @@ XYFlosersShopModel *model;
     propertiesLoder = [XYPropertiesLoader sharedPropertiesLoader];
     model = [XYFlosersShopModel sharedModel];
     self.navigationItem.leftBarButtonItem.enabled = NO;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStylePlain target:self action:@selector(loginButtonTapped)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@kRightButtonTextLogin style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonTapped)];
 }
 
-- (void)loginButtonTapped {
-    if (![XYAppDelegate loginStatus]) {
-        UIAlertView *loginAlertView = [[UIAlertView alloc] initWithTitle:@"Manager Login" message:@"Enter login and password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-        loginAlertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-        [loginAlertView show];
-    } else
-        [self forwardAddProductPage];
+- (void)rightButtonTapped {
+    if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@kRightButtonTextLogin])
+        [self login];
+    else if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@kRightButtonTextLogout])
+        [self logout];
+    else if([self.navigationItem.rightBarButtonItem.title isEqualToString:@kRightButtontextCart])
+        [self forwardShoppingCartPage];
 }
 
-- (void)logoutButtonTapped {
+- (void)login {
+    UIAlertView *loginAlertView = [[UIAlertView alloc] initWithTitle:@"Manager Login" message:@"Enter login and password" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    loginAlertView.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+    [loginAlertView show];
+}
+
+- (void)logout {
     [XYAppDelegate setLoginStatus:NO];
     NSLog(@"Manager logout successful.");
-    // 管理员登出后，显示登入按钮
     self.navigationItem.leftBarButtonItem.enabled = NO;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Login" style:UIBarButtonItemStylePlain target:self action:@selector(loginButtonTapped)];
+    // 管理员登出后，显示登入按钮
+    self.navigationItem.rightBarButtonItem.title = @kRightButtonTextLogin;
     [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    // 如果管理员已经登入，显示登出按钮
-    if ([XYAppDelegate loginStatus]) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logoutButtonTapped)];
-    }
-    
     [self.tableView reloadData];
 }
 
@@ -81,7 +86,7 @@ XYFlosersShopModel *model;
     XYProduct *product = [[model products] objectAtIndex:indexPath.row];
     [model addProductToCartWithProductid:product.prodid];
     NSLog(@"User add %@ to the cart.", product.prodname);
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(forwardShoppingCartPage)];
+    self.navigationItem.rightBarButtonItem.title = @kRightButtontextCart;
 }
 
 - (IBAction)deleteProductButtonTapped:(UIBarButtonItem *)sender {
@@ -98,6 +103,7 @@ XYFlosersShopModel *model;
             [XYAppDelegate setLoginStatus:YES];
             NSLog(@"Manager login successful.");
             self.navigationItem.leftBarButtonItem.enabled = YES;
+            self.navigationItem.rightBarButtonItem.title = @kRightButtonTextLogout;
             [self forwardAddProductPage];
         }
         else {
