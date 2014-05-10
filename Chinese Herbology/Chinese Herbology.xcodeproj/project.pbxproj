@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4926C957191EA84A003A17AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926C956191EA84A003A17AF /* Foundation.framework */; };
+		4926C959191EA84A003A17AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926C958191EA84A003A17AF /* CoreGraphics.framework */; };
+		4926C95B191EA84A003A17AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926C95A191EA84A003A17AF /* UIKit.framework */; };
+		4926C95D191EA84A003A17AF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926C95C191EA84A003A17AF /* CoreData.framework */; };
+		4926C963191EA84A003A17AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4926C961191EA84A003A17AF /* InfoPlist.strings */; };
+		4926C965191EA84A003A17AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C964191EA84A003A17AF /* main.m */; };
+		4926C969191EA84A003A17AF /* CHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C968191EA84A003A17AF /* CHAppDelegate.m */; };
+		4926C96C191EA84A003A17AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4926C96A191EA84A003A17AF /* Main.storyboard */; };
+		4926C96F191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4926C96D191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld */; };
+		4926C972191EA84A003A17AF /* CHMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C971191EA84A003A17AF /* CHMasterViewController.m */; };
+		4926C975191EA84A003A17AF /* CHDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C974191EA84A003A17AF /* CHDetailViewController.m */; };
+		4926C977191EA84A003A17AF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4926C976191EA84A003A17AF /* Images.xcassets */; };
+		4926C97E191EA84A003A17AF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926C97D191EA84A003A17AF /* XCTest.framework */; };
+		4926C97F191EA84A003A17AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926C956191EA84A003A17AF /* Foundation.framework */; };
+		4926C980191EA84A003A17AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926C95A191EA84A003A17AF /* UIKit.framework */; };
+		4926C981191EA84A003A17AF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926C95C191EA84A003A17AF /* CoreData.framework */; };
+		4926C989191EA84A003A17AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4926C987191EA84A003A17AF /* InfoPlist.strings */; };
+		4926C98B191EA84A003A17AF /* Chinese_HerbologyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C98A191EA84A003A17AF /* Chinese_HerbologyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4926C982191EA84A003A17AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4926C94B191EA84A003A17AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4926C952191EA84A003A17AF;
+			remoteInfo = "Chinese Herbology";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4926C953191EA84A003A17AF /* Chinese Herbology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chinese Herbology.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4926C956191EA84A003A17AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4926C958191EA84A003A17AF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4926C95A191EA84A003A17AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4926C95C191EA84A003A17AF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4926C960191EA84A003A17AF /* Chinese Herbology-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chinese Herbology-Info.plist"; sourceTree = "<group>"; };
+		4926C962191EA84A003A17AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4926C964191EA84A003A17AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4926C966191EA84A003A17AF /* Chinese Herbology-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chinese Herbology-Prefix.pch"; sourceTree = "<group>"; };
+		4926C967191EA84A003A17AF /* CHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHAppDelegate.h; sourceTree = "<group>"; };
+		4926C968191EA84A003A17AF /* CHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHAppDelegate.m; sourceTree = "<group>"; };
+		4926C96B191EA84A003A17AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4926C96E191EA84A003A17AF /* Chinese_Herbology.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chinese_Herbology.xcdatamodel; sourceTree = "<group>"; };
+		4926C970191EA84A003A17AF /* CHMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHMasterViewController.h; sourceTree = "<group>"; };
+		4926C971191EA84A003A17AF /* CHMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHMasterViewController.m; sourceTree = "<group>"; };
+		4926C973191EA84A003A17AF /* CHDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHDetailViewController.h; sourceTree = "<group>"; };
+		4926C974191EA84A003A17AF /* CHDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHDetailViewController.m; sourceTree = "<group>"; };
+		4926C976191EA84A003A17AF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4926C97C191EA84A003A17AF /* Chinese HerbologyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chinese HerbologyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4926C97D191EA84A003A17AF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4926C986191EA84A003A17AF /* Chinese HerbologyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chinese HerbologyTests-Info.plist"; sourceTree = "<group>"; };
+		4926C988191EA84A003A17AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4926C98A191EA84A003A17AF /* Chinese_HerbologyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Chinese_HerbologyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4926C950191EA84A003A17AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4926C959191EA84A003A17AF /* CoreGraphics.framework in Frameworks */,
+				4926C95D191EA84A003A17AF /* CoreData.framework in Frameworks */,
+				4926C95B191EA84A003A17AF /* UIKit.framework in Frameworks */,
+				4926C957191EA84A003A17AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4926C979191EA84A003A17AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4926C97E191EA84A003A17AF /* XCTest.framework in Frameworks */,
+				4926C981191EA84A003A17AF /* CoreData.framework in Frameworks */,
+				4926C980191EA84A003A17AF /* UIKit.framework in Frameworks */,
+				4926C97F191EA84A003A17AF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4926C94A191EA84A003A17AF = {
+			isa = PBXGroup;
+			children = (
+				4926C95E191EA84A003A17AF /* Chinese Herbology */,
+				4926C984191EA84A003A17AF /* Chinese HerbologyTests */,
+				4926C955191EA84A003A17AF /* Frameworks */,
+				4926C954191EA84A003A17AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4926C954191EA84A003A17AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4926C953191EA84A003A17AF /* Chinese Herbology.app */,
+				4926C97C191EA84A003A17AF /* Chinese HerbologyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4926C955191EA84A003A17AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4926C956191EA84A003A17AF /* Foundation.framework */,
+				4926C958191EA84A003A17AF /* CoreGraphics.framework */,
+				4926C95A191EA84A003A17AF /* UIKit.framework */,
+				4926C95C191EA84A003A17AF /* CoreData.framework */,
+				4926C97D191EA84A003A17AF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4926C95E191EA84A003A17AF /* Chinese Herbology */ = {
+			isa = PBXGroup;
+			children = (
+				4926C967191EA84A003A17AF /* CHAppDelegate.h */,
+				4926C968191EA84A003A17AF /* CHAppDelegate.m */,
+				4926C96A191EA84A003A17AF /* Main.storyboard */,
+				4926C970191EA84A003A17AF /* CHMasterViewController.h */,
+				4926C971191EA84A003A17AF /* CHMasterViewController.m */,
+				4926C973191EA84A003A17AF /* CHDetailViewController.h */,
+				4926C974191EA84A003A17AF /* CHDetailViewController.m */,
+				4926C976191EA84A003A17AF /* Images.xcassets */,
+				4926C96D191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld */,
+				4926C95F191EA84A003A17AF /* Supporting Files */,
+			);
+			path = "Chinese Herbology";
+			sourceTree = "<group>";
+		};
+		4926C95F191EA84A003A17AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4926C960191EA84A003A17AF /* Chinese Herbology-Info.plist */,
+				4926C961191EA84A003A17AF /* InfoPlist.strings */,
+				4926C964191EA84A003A17AF /* main.m */,
+				4926C966191EA84A003A17AF /* Chinese Herbology-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4926C984191EA84A003A17AF /* Chinese HerbologyTests */ = {
+			isa = PBXGroup;
+			children = (
+				4926C98A191EA84A003A17AF /* Chinese_HerbologyTests.m */,
+				4926C985191EA84A003A17AF /* Supporting Files */,
+			);
+			path = "Chinese HerbologyTests";
+			sourceTree = "<group>";
+		};
+		4926C985191EA84A003A17AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4926C986191EA84A003A17AF /* Chinese HerbologyTests-Info.plist */,
+				4926C987191EA84A003A17AF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4926C952191EA84A003A17AF /* Chinese Herbology */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4926C98E191EA84A003A17AF /* Build configuration list for PBXNativeTarget "Chinese Herbology" */;
+			buildPhases = (
+				4926C94F191EA84A003A17AF /* Sources */,
+				4926C950191EA84A003A17AF /* Frameworks */,
+				4926C951191EA84A003A17AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chinese Herbology";
+			productName = "Chinese Herbology";
+			productReference = 4926C953191EA84A003A17AF /* Chinese Herbology.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4926C97B191EA84A003A17AF /* Chinese HerbologyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4926C991191EA84A003A17AF /* Build configuration list for PBXNativeTarget "Chinese HerbologyTests" */;
+			buildPhases = (
+				4926C978191EA84A003A17AF /* Sources */,
+				4926C979191EA84A003A17AF /* Frameworks */,
+				4926C97A191EA84A003A17AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4926C983191EA84A003A17AF /* PBXTargetDependency */,
+			);
+			name = "Chinese HerbologyTests";
+			productName = "Chinese HerbologyTests";
+			productReference = 4926C97C191EA84A003A17AF /* Chinese HerbologyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4926C94B191EA84A003A17AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CH;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = FREE;
+				TargetAttributes = {
+					4926C97B191EA84A003A17AF = {
+						TestTargetID = 4926C952191EA84A003A17AF;
+					};
+				};
+			};
+			buildConfigurationList = 4926C94E191EA84A003A17AF /* Build configuration list for PBXProject "Chinese Herbology" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4926C94A191EA84A003A17AF;
+			productRefGroup = 4926C954191EA84A003A17AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4926C952191EA84A003A17AF /* Chinese Herbology */,
+				4926C97B191EA84A003A17AF /* Chinese HerbologyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4926C951191EA84A003A17AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4926C977191EA84A003A17AF /* Images.xcassets in Resources */,
+				4926C963191EA84A003A17AF /* InfoPlist.strings in Resources */,
+				4926C96C191EA84A003A17AF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4926C97A191EA84A003A17AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4926C989191EA84A003A17AF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4926C94F191EA84A003A17AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4926C965191EA84A003A17AF /* main.m in Sources */,
+				4926C975191EA84A003A17AF /* CHDetailViewController.m in Sources */,
+				4926C972191EA84A003A17AF /* CHMasterViewController.m in Sources */,
+				4926C96F191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld in Sources */,
+				4926C969191EA84A003A17AF /* CHAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4926C978191EA84A003A17AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4926C98B191EA84A003A17AF /* Chinese_HerbologyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4926C983191EA84A003A17AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4926C952191EA84A003A17AF /* Chinese Herbology */;
+			targetProxy = 4926C982191EA84A003A17AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4926C961191EA84A003A17AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4926C962191EA84A003A17AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4926C96A191EA84A003A17AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4926C96B191EA84A003A17AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4926C987191EA84A003A17AF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4926C988191EA84A003A17AF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4926C98C191EA84A003A17AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		4926C98D191EA84A003A17AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4926C98F191EA84A003A17AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chinese Herbology/Chinese Herbology-Prefix.pch";
+				INFOPLIST_FILE = "Chinese Herbology/Chinese Herbology-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4926C990191EA84A003A17AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chinese Herbology/Chinese Herbology-Prefix.pch";
+				INFOPLIST_FILE = "Chinese Herbology/Chinese Herbology-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4926C992191EA84A003A17AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chinese Herbology.app/Chinese Herbology";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chinese Herbology/Chinese Herbology-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Chinese HerbologyTests/Chinese HerbologyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4926C993191EA84A003A17AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Chinese Herbology.app/Chinese Herbology";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Chinese Herbology/Chinese Herbology-Prefix.pch";
+				INFOPLIST_FILE = "Chinese HerbologyTests/Chinese HerbologyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4926C94E191EA84A003A17AF /* Build configuration list for PBXProject "Chinese Herbology" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4926C98C191EA84A003A17AF /* Debug */,
+				4926C98D191EA84A003A17AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4926C98E191EA84A003A17AF /* Build configuration list for PBXNativeTarget "Chinese Herbology" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4926C98F191EA84A003A17AF /* Debug */,
+				4926C990191EA84A003A17AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4926C991191EA84A003A17AF /* Build configuration list for PBXNativeTarget "Chinese HerbologyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4926C992191EA84A003A17AF /* Debug */,
+				4926C993191EA84A003A17AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4926C96D191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4926C96E191EA84A003A17AF /* Chinese_Herbology.xcdatamodel */,
+			);
+			currentVersion = 4926C96E191EA84A003A17AF /* Chinese_Herbology.xcdatamodel */;
+			path = Chinese_Herbology.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4926C94B191EA84A003A17AF /* Project object */;
+}
