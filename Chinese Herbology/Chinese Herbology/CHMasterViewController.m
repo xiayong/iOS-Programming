@@ -122,6 +122,8 @@
         return _fetchedResultsController;
     }
     
+    /*
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
@@ -149,6 +151,7 @@
 	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 	    abort();
 	}
+    */
     
     return _fetchedResultsController;
 }    
