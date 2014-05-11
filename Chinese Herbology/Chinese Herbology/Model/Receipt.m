@@ -12,7 +12,7 @@
 
 @implementation Receipt
 
-@dynamic id;
+@dynamic rid;
 @dynamic price;
 @dynamic quantity;
 @dynamic createDate;

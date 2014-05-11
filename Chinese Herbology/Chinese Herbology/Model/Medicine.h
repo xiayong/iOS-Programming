@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSDecimalNumber * price;
 @property (nonatomic, retain) NSData * image;
-@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSString * mid;
 @property (nonatomic, retain) NSSet *receipt;
 @end
 

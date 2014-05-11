@@ -11,7 +11,7 @@
 
 @implementation Patient
 
-@dynamic id;
+@dynamic pid;
 @dynamic firstName;
 @dynamic lastName;
 @dynamic tel;

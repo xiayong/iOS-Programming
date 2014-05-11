@@ -15,7 +15,7 @@
 @dynamic name;
 @dynamic price;
 @dynamic image;
-@dynamic id;
+@dynamic mid;
 @dynamic receipt;
 
 @end

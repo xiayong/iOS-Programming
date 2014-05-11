@@ -13,7 +13,7 @@
 
 @interface Receipt : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSNumber * rid;
 @property (nonatomic, retain) NSDecimalNumber * price;
 @property (nonatomic, retain) NSNumber * quantity;
 @property (nonatomic, retain) NSString * createDate;
