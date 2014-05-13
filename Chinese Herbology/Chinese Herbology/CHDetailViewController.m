@@ -8,6 +8,8 @@
 
 #import "CHDetailViewController.h"
 
+
+
 @interface CHDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
@@ -47,6 +49,12 @@
     [self configureView];
     
     NSLog(@"%@", [[NSUUID UUID] UUIDString]);
+    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *controller = [storyBoard instantiateViewControllerWithIdentifier:@"AddPatient"];
+    [self presentViewController:controller animated:(YES) completion:^{
+        //
+    }];
 }
 
 - (void)didReceiveMemoryWarning
