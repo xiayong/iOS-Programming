@@ -29,6 +29,7 @@
 		4926C99919200BCE003A17AF /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C99819200BCE003A17AF /* Receipt.m */; };
 		4926C99C19200BCE003A17AF /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C99B19200BCE003A17AF /* Medicine.m */; };
 		4926C9A119216241003A17AF /* CHAddPatientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C9A019216241003A17AF /* CHAddPatientViewController.m */; };
+		4926C9A41923EDE6003A17AF /* CHAddMedicineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C9A31923EDE6003A17AF /* CHAddMedicineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		4926C99B19200BCE003A17AF /* Medicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medicine.m; path = Model/Medicine.m; sourceTree = "<group>"; };
 		4926C99F19216241003A17AF /* CHAddPatientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAddPatientViewController.h; sourceTree = "<group>"; };
 		4926C9A019216241003A17AF /* CHAddPatientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAddPatientViewController.m; sourceTree = "<group>"; };
+		4926C9A21923EDE6003A17AF /* CHAddMedicineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAddMedicineViewController.h; sourceTree = "<group>"; };
+		4926C9A31923EDE6003A17AF /* CHAddMedicineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAddMedicineViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,8 @@
 				4926C974191EA84A003A17AF /* CHDetailViewController.m */,
 				4926C99F19216241003A17AF /* CHAddPatientViewController.h */,
 				4926C9A019216241003A17AF /* CHAddPatientViewController.m */,
+				4926C9A21923EDE6003A17AF /* CHAddMedicineViewController.h */,
+				4926C9A31923EDE6003A17AF /* CHAddMedicineViewController.m */,
 				4926C976191EA84A003A17AF /* Images.xcassets */,
 				4926C96D191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld */,
 				4926C95F191EA84A003A17AF /* Supporting Files */,
@@ -297,6 +302,7 @@
 				4926C9A119216241003A17AF /* CHAddPatientViewController.m in Sources */,
 				4926C972191EA84A003A17AF /* CHMasterViewController.m in Sources */,
 				4926C99C19200BCE003A17AF /* Medicine.m in Sources */,
+				4926C9A41923EDE6003A17AF /* CHAddMedicineViewController.m in Sources */,
 				4926C99619200BCD003A17AF /* Patient.m in Sources */,
 				4926C96F191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld in Sources */,
 				4926C99919200BCE003A17AF /* Receipt.m in Sources */,

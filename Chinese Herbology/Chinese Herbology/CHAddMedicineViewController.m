@@ -1,18 +1,18 @@
 //
-//  CHAddPatientViewController.m
+//  CHAddMedicineViewController.m
 //  Chinese Herbology
 //
-//  Created by Andrew on 05-13-14.
+//  Created by Andrew on 05-15-14.
 //  Copyright (c) 2014年 FREE. All rights reserved.
 //
 
-#import "CHAddPatientViewController.h"
+#import "CHAddMedicineViewController.h"
 
-@interface CHAddPatientViewController ()
+@interface CHAddMedicineViewController ()
 
 @end
 
-@implementation CHAddPatientViewController
+@implementation CHAddMedicineViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,5 +48,8 @@
 
 - (IBAction)cancelButtonTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)saveButtonTapped:(UIBarButtonItem *)sender {
 }
 @end
