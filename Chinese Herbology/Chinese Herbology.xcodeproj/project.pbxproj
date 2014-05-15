@@ -25,11 +25,11 @@
 		4926C981191EA84A003A17AF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4926C95C191EA84A003A17AF /* CoreData.framework */; };
 		4926C989191EA84A003A17AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4926C987191EA84A003A17AF /* InfoPlist.strings */; };
 		4926C98B191EA84A003A17AF /* Chinese_HerbologyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C98A191EA84A003A17AF /* Chinese_HerbologyTests.m */; };
-		4926C99619200BCD003A17AF /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C99519200BCD003A17AF /* Patient.m */; };
-		4926C99919200BCE003A17AF /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C99819200BCE003A17AF /* Receipt.m */; };
-		4926C99C19200BCE003A17AF /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C99B19200BCE003A17AF /* Medicine.m */; };
 		4926C9A119216241003A17AF /* CHAddPatientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C9A019216241003A17AF /* CHAddPatientViewController.m */; };
 		4926C9A41923EDE6003A17AF /* CHAddMedicineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C9A31923EDE6003A17AF /* CHAddMedicineViewController.m */; };
+		4960CB891925550700374F1D /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4960CB881925550700374F1D /* Medicine.m */; };
+		4960CB8C1925550800374F1D /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4960CB8B1925550800374F1D /* Patient.m */; };
+		4960CB8F1925550800374F1D /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4960CB8E1925550800374F1D /* Receipt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,16 +66,17 @@
 		4926C986191EA84A003A17AF /* Chinese HerbologyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Chinese HerbologyTests-Info.plist"; sourceTree = "<group>"; };
 		4926C988191EA84A003A17AF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4926C98A191EA84A003A17AF /* Chinese_HerbologyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Chinese_HerbologyTests.m; sourceTree = "<group>"; };
-		4926C99419200BCD003A17AF /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = Model/Patient.h; sourceTree = "<group>"; };
-		4926C99519200BCD003A17AF /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Patient.m; sourceTree = "<group>"; };
-		4926C99719200BCE003A17AF /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Receipt.h; path = Model/Receipt.h; sourceTree = "<group>"; };
-		4926C99819200BCE003A17AF /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Receipt.m; path = Model/Receipt.m; sourceTree = "<group>"; };
-		4926C99A19200BCE003A17AF /* Medicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medicine.h; path = Model/Medicine.h; sourceTree = "<group>"; };
-		4926C99B19200BCE003A17AF /* Medicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medicine.m; path = Model/Medicine.m; sourceTree = "<group>"; };
 		4926C99F19216241003A17AF /* CHAddPatientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAddPatientViewController.h; sourceTree = "<group>"; };
 		4926C9A019216241003A17AF /* CHAddPatientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAddPatientViewController.m; sourceTree = "<group>"; };
 		4926C9A21923EDE6003A17AF /* CHAddMedicineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAddMedicineViewController.h; sourceTree = "<group>"; };
 		4926C9A31923EDE6003A17AF /* CHAddMedicineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAddMedicineViewController.m; sourceTree = "<group>"; };
+		4926C9A6192545C4003A17AF /* CHConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHConstants.h; sourceTree = "<group>"; };
+		4960CB871925550700374F1D /* Medicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medicine.h; path = Model/Medicine.h; sourceTree = "<group>"; };
+		4960CB881925550700374F1D /* Medicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medicine.m; path = Model/Medicine.m; sourceTree = "<group>"; };
+		4960CB8A1925550800374F1D /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = Model/Patient.h; sourceTree = "<group>"; };
+		4960CB8B1925550800374F1D /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Patient.m; sourceTree = "<group>"; };
+		4960CB8D1925550800374F1D /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Receipt.h; path = Model/Receipt.h; sourceTree = "<group>"; };
+		4960CB8E1925550800374F1D /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Receipt.m; path = Model/Receipt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				4926C99E19200BFF003A17AF /* Model */,
+				4926C9A6192545C4003A17AF /* CHConstants.h */,
 				4926C967191EA84A003A17AF /* CHAppDelegate.h */,
 				4926C968191EA84A003A17AF /* CHAppDelegate.m */,
 				4926C96A191EA84A003A17AF /* Main.storyboard */,
@@ -189,12 +191,12 @@
 		4926C99E19200BFF003A17AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4926C99A19200BCE003A17AF /* Medicine.h */,
-				4926C99B19200BCE003A17AF /* Medicine.m */,
-				4926C99719200BCE003A17AF /* Receipt.h */,
-				4926C99819200BCE003A17AF /* Receipt.m */,
-				4926C99419200BCD003A17AF /* Patient.h */,
-				4926C99519200BCD003A17AF /* Patient.m */,
+				4960CB8D1925550800374F1D /* Receipt.h */,
+				4960CB8E1925550800374F1D /* Receipt.m */,
+				4960CB8A1925550800374F1D /* Patient.h */,
+				4960CB8B1925550800374F1D /* Patient.m */,
+				4960CB871925550700374F1D /* Medicine.h */,
+				4960CB881925550700374F1D /* Medicine.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -300,12 +302,12 @@
 				4926C965191EA84A003A17AF /* main.m in Sources */,
 				4926C975191EA84A003A17AF /* CHDetailViewController.m in Sources */,
 				4926C9A119216241003A17AF /* CHAddPatientViewController.m in Sources */,
+				4960CB8C1925550800374F1D /* Patient.m in Sources */,
+				4960CB891925550700374F1D /* Medicine.m in Sources */,
 				4926C972191EA84A003A17AF /* CHMasterViewController.m in Sources */,
-				4926C99C19200BCE003A17AF /* Medicine.m in Sources */,
+				4960CB8F1925550800374F1D /* Receipt.m in Sources */,
 				4926C9A41923EDE6003A17AF /* CHAddMedicineViewController.m in Sources */,
-				4926C99619200BCD003A17AF /* Patient.m in Sources */,
 				4926C96F191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld in Sources */,
-				4926C99919200BCE003A17AF /* Receipt.m in Sources */,
 				4926C969191EA84A003A17AF /* CHAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +515,7 @@
 				4926C990191EA84A003A17AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4926C991191EA84A003A17AF /* Build configuration list for PBXNativeTarget "Chinese HerbologyTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +524,7 @@
 				4926C993191EA84A003A17AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

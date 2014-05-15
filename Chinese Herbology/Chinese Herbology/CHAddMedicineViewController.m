@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSURL *url = [NSURL URLWithString:[@"https://zh.wikipedia.org/wiki/黄芪" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.medicineWebView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,5 +54,25 @@
 }
 
 - (IBAction)saveButtonTapped:(UIBarButtonItem *)sender {
+    NSString *name = [self.medicineNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    if (!name.length) {
+        [[[UIAlertView alloc] initWithTitle:@"Chinese Herbology" message:@"The medicine name can not be blank" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        return;
+    }
+    
+    NSString *englishname = [self.medicineEnglishNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    NSScanner *scanner = [NSScanner scannerWithString:self.medicinePriceTextField.text];
+    float price;
+    if (!([scanner scanFloat:&price] && scanner.isAtEnd)) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Chinese Herbology" message:@"Please type the valid medicine price." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        return;
+    }
+    NSDictionary *dic = @{@"name":name, @"englishname":englishname, @"price" : [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%.2f", price]]};
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+        [notificationCenter postNotificationName:@kNotificationAddNewMedicineName object:self userInfo:dic];
+    }];
 }
 @end

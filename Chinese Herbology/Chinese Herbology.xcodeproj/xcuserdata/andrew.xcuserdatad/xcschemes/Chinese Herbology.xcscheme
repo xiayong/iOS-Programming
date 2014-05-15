@@ -69,11 +69,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "1"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-com.apple.CoreData.SQLDebug"
+            argument = "-com.apple.CoreData.SQLDebug 1"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

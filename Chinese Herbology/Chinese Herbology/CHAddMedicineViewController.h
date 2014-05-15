@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CHConstants.h"
 
 @interface CHAddMedicineViewController : UIViewController
 - (IBAction)cancelButtonTapped:(UIBarButtonItem *)sender;
 - (IBAction)saveButtonTapped:(UIBarButtonItem *)sender;
+@property (weak, nonatomic) IBOutlet UITextField *medicineNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *medicineEnglishNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *medicinePriceTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *medicineImageView;
+@property (weak, nonatomic) IBOutlet UIWebView *medicineWebView;
 
 
 @end

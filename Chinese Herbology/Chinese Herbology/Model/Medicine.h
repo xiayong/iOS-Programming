@@ -2,7 +2,7 @@
 //  Medicine.h
 //  Chinese Herbology
 //
-//  Created by Andrew on 05-12-14.
+//  Created by Andrew on 05-16-14.
 //  Copyright (c) 2014年 FREE. All rights reserved.
 //
 
@@ -13,18 +13,19 @@
 
 @interface Medicine : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSDecimalNumber * price;
 @property (nonatomic, retain) NSData * image;
 @property (nonatomic, retain) NSString * mid;
-@property (nonatomic, retain) NSSet *receipt;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * englistname;
+@property (nonatomic, retain) NSDecimalNumber * price;
+@property (nonatomic, retain) NSSet *receipts;
 @end
 
 @interface Medicine (CoreDataGeneratedAccessors)
 
-- (void)addReceiptObject:(Receipt *)value;
-- (void)removeReceiptObject:(Receipt *)value;
-- (void)addReceipt:(NSSet *)values;
-- (void)removeReceipt:(NSSet *)values;
+- (void)addReceiptsObject:(Receipt *)value;
+- (void)removeReceiptsObject:(Receipt *)value;
+- (void)addReceipts:(NSSet *)values;
+- (void)removeReceipts:(NSSet *)values;
 
 @end

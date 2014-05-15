@@ -2,7 +2,7 @@
 //  Medicine.m
 //  Chinese Herbology
 //
-//  Created by Andrew on 05-12-14.
+//  Created by Andrew on 05-16-14.
 //  Copyright (c) 2014年 FREE. All rights reserved.
 //
 
@@ -12,10 +12,11 @@
 
 @implementation Medicine
 
-@dynamic name;
-@dynamic price;
 @dynamic image;
 @dynamic mid;
-@dynamic receipt;
+@dynamic name;
+@dynamic englistname;
+@dynamic price;
+@dynamic receipts;
 
 @end

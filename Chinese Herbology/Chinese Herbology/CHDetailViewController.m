@@ -47,14 +47,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
-    
-    NSLog(@"%@", [[NSUUID UUID] UUIDString]);
-    
-    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *controller = [storyBoard instantiateViewControllerWithIdentifier:@"AddPatient"];
-    [self presentViewController:controller animated:(YES) completion:^{
-        //
-    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,11 +55,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    UISegmentedControl *segment = (UISegmentedControl *)sender;
+    return !segment.selectedSegmentIndex;
+}
+
 #pragma mark - Split view
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"中药资料", @"中药资料");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
