@@ -75,4 +75,11 @@
         [notificationCenter postNotificationName:@kNotificationAddNewMedicineName object:self userInfo:dic];
     }];
 }
+- (IBAction)keyboardReturnTapped:(UITextField *)sender {
+    [sender resignFirstResponder];
+    if (self.medicineNameTextField == sender)
+        [self.medicineEnglishNameTextField becomeFirstResponder];
+    else if (self.medicineEnglishNameTextField == sender)
+        [self.medicinePriceTextField becomeFirstResponder];
+}
 @end

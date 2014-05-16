@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *medicineImageView;
 @property (weak, nonatomic) IBOutlet UIWebView *medicineWebView;
 
+- (IBAction)keyboardReturnTapped:(UITextField *)sender;
 
 @end
