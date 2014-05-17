@@ -7,8 +7,10 @@
 //
 
 #import "CHMasterViewController.h"
-
 #import "CHDetailViewController.h"
+#import "CHConstants.h"
+#import "Model/Medicine.h"
+
 
 @interface CHMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -32,6 +34,8 @@
     //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     //self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (CHDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(insertNewObject:) name:@kNotificationAddNewMedicineName object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,15 +44,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
+- (void)insertNewObject:(NSNotification *)sender
 {
+    NSDictionary *dictionary = [sender userInfo];
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    Medicine *newMedicine = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
     
     // If appropriate, configure the new managed object.
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"name"];
+    newMedicine.mid = [[NSUUID UUID] UUIDString];
+    newMedicine.name = [dictionary valueForKey:@"name"];
+    newMedicine.englistname = [dictionary valueForKey:@"englishname"];
+    newMedicine.price = [dictionary valueForKey:@"price"];
+    newMedicine.image = [dictionary valueForKey:@"image"];
     
     // Save the context.
     NSError *error = nil;
