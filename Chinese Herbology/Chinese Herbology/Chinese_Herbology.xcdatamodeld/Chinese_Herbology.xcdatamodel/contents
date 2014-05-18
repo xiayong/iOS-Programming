@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C1021" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Medicine" representedClassName="Medicine" syncable="YES">
         <attribute name="englistname" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="mid" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="mno" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="price" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="price" attributeType="Decimal" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="receipts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Receipt" inverseName="medicine" inverseEntity="Receipt" syncable="YES"/>
     </entity>
     <entity name="Patient" representedClassName="Patient" syncable="YES">
@@ -26,7 +28,7 @@
         <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="receipts" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Medicine" positionX="-63" positionY="72" width="135" height="133"/>
+        <element name="Medicine" positionX="-63" positionY="72" width="135" height="165"/>
         <element name="Patient" positionX="322" positionY="72" width="128" height="148"/>
         <element name="Receipt" positionX="133" positionY="72" width="128" height="135"/>
     </elements>

@@ -11,5 +11,7 @@
 
 #define kNotificationAddNewMedicineName     "Add new medicine"
 
+#define kMedicineDetialURLPrefix            "http://libproject.hkbu.edu.hk/was40/detail?channelid=47953&lang=chs&searchword=pid="
+#define kMedicineImageURL                   "http://libproject.hkbu.edu.hk/trsimage/mmd/%@.jpg"
 
 #endif

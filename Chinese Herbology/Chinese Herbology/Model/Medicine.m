@@ -14,9 +14,11 @@
 
 @dynamic image;
 @dynamic mid;
+@dynamic mno;
 @dynamic name;
 @dynamic englistname;
 @dynamic price;
+@dynamic url;
 @dynamic receipts;
 
 @end

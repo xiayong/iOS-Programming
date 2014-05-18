@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *medicineNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *medicineEnglishNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *medicinePriceTextField;
+@property (weak, nonatomic) IBOutlet UITextField *medicineNoTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *medicineImageView;
 @property (weak, nonatomic) IBOutlet UIWebView *medicineWebView;
 

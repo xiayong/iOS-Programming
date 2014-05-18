@@ -55,9 +55,11 @@
     // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
     newMedicine.mid = [[NSUUID UUID] UUIDString];
     newMedicine.name = [dictionary valueForKey:@"name"];
+    newMedicine.mno = [dictionary valueForKey:@"no"];
     newMedicine.englistname = [dictionary valueForKey:@"englishname"];
     newMedicine.price = [dictionary valueForKey:@"price"];
     newMedicine.image = [dictionary valueForKey:@"image"];
+    newMedicine.url = [dictionary valueForKey:@"url"];
     
     // Save the context.
     NSError *error = nil;
