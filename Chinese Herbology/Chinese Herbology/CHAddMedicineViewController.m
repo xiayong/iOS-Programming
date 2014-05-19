@@ -71,6 +71,7 @@
     
     NSData *imageData = UIImageJPEGRepresentation(self.medicineImageView.image, 0.5);
     NSDictionary *dic = @{@"name":name, @"no":self.medicineNoTextField.text, @"englishname":englishname, @"price" : [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%.2f", price]], @"image" : imageData, @"url":self.medicineDetailURL};
+    NSLog(@"Posting the notification to save the new medidine - %@.", name);
     [self dismissViewControllerAnimated:YES completion:^{
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
         [notificationCenter postNotificationName:@kNotificationAddNewMedicineName object:self userInfo:dic];

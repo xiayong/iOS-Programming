@@ -47,6 +47,7 @@
 - (void)insertNewObject:(NSNotification *)sender
 {
     NSDictionary *dictionary = [sender userInfo];
+    NSLog(@"Recived the add new medicine notification, saving...");
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
     NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     Medicine *newMedicine = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
@@ -69,6 +70,7 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+    NSLog(@"Save the new medicine %@ successfaul.", newMedicine.name);
 }
 
 #pragma mark - Table View
@@ -86,7 +88,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    static NSString *MedicineCellIdentifier = @"MedicineCellIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MedicineCellIdentifier forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
@@ -117,6 +120,10 @@
 {
     // The table view should not be re-orderable.
     return NO;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -227,8 +234,10 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSManagedObject *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [[object valueForKey:@"name"] description];
+    Medicine *medicine = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    ((UIImageView *)[cell viewWithTag:0]).image = [UIImage imageWithData:medicine.image];
+    ((UILabel *)[cell viewWithTag:1]).text = medicine.name;
+    ((UILabel *)[cell viewWithTag:2]).text = [NSString stringWithFormat:@"HK$ %@", medicine.price.description];
 }
 
 @end
