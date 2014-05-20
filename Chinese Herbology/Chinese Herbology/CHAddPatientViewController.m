@@ -8,7 +8,7 @@
 
 #import "CHAddPatientViewController.h"
 
-@interface CHAddPatientViewController ()
+@interface CHAddPatientViewController () <UITextFieldDelegate>
 
 @end
 
@@ -48,5 +48,35 @@
 
 - (IBAction)cancelButtonTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)saveButtonTapped:(UIBarButtonItem *)sender {
+}
+
+/*
+ iPad应用程序中，以Form Sheet样式modal出来的页面使用[UITextField resignFirstResponder]无法关闭键盘
+ 需要重写这个方法以关闭键盘
+ */
+-(BOOL)disablesAutomaticKeyboardDismissal {
+    return NO;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSArray *textFieldNames = @[@"lname",@"fname",@"emial",@"tel",@"age"];
+    for (NSString *name in textFieldNames) {
+        UITextField *textField = (UITextField *)[self valueForKey:[NSString stringWithFormat:@"%@TextField", name]];
+        [textField resignFirstResponder];
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    return YES;
+}
+
+- (IBAction)textFieldReturnKeyTapped:(UITextField *)sender {
+    if (sender.tag < 14) {
+        UITextField *textField = (UITextField *) [self.view viewWithTag:sender.tag + 1];
+        [textField becomeFirstResponder];
+    }
 }
 @end

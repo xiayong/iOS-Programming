@@ -132,16 +132,77 @@
                                                 <action selector="cancelButtonTapped:" destination="zja-FV-1a9" id="eR1-zO-lhB"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="H4g-mN-GW8"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="H4g-mN-GW8">
+                                            <connections>
+                                                <action selector="saveButtonTapped:" destination="zja-FV-1a9" id="TOd-CP-27L"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入病人的名字" minimumFontSize="17" id="mgM-LX-oiy">
+                                <rect key="frame" x="80" y="70" width="360" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="textFieldReturnKeyTapped:" destination="zja-FV-1a9" eventType="editingDidEndOnExit" id="n7o-0W-BVz"/>
+                                    <outlet property="delegate" destination="zja-FV-1a9" id="3ot-f0-lDn"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入病人的姓氏" minimumFontSize="17" id="SkJ-wB-8tH">
+                                <rect key="frame" x="80" y="118" width="360" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="textFieldReturnKeyTapped:" destination="zja-FV-1a9" eventType="editingDidEndOnExit" id="Ewi-M9-jtf"/>
+                                    <outlet property="delegate" destination="zja-FV-1a9" id="DLH-Qe-8Rj"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入病人的电子邮箱" minimumFontSize="17" id="VxW-LS-OjK">
+                                <rect key="frame" x="80" y="166" width="360" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="textFieldReturnKeyTapped:" destination="zja-FV-1a9" eventType="editingDidEndOnExit" id="fXu-wt-Mnx"/>
+                                    <outlet property="delegate" destination="zja-FV-1a9" id="S3H-FT-xH1"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入病人的电话号码" minimumFontSize="17" id="9vm-do-JMj">
+                                <rect key="frame" x="80" y="214" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="textFieldReturnKeyTapped:" destination="zja-FV-1a9" eventType="editingDidEndOnExit" id="Bvg-Mu-cHF"/>
+                                    <outlet property="delegate" destination="zja-FV-1a9" id="E5R-UN-6dg"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入病人的年龄" minimumFontSize="17" id="Hhh-jM-ALj">
+                                <rect key="frame" x="80" y="262" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldReturnKeyTapped:" destination="zja-FV-1a9" eventType="editingDidEndOnExit" id="Yw5-Pz-oAN"/>
+                                    <outlet property="delegate" destination="zja-FV-1a9" id="SMe-EP-7JO"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="ageTextField" destination="Hhh-jM-ALj" id="sAA-RR-Tyd"/>
+                        <outlet property="emialTextField" destination="VxW-LS-OjK" id="SDn-nw-pY4"/>
+                        <outlet property="fnameTextField" destination="SkJ-wB-8tH" id="aFG-nt-BeU"/>
+                        <outlet property="lnameTextField" destination="mgM-LX-oiy" id="9ZV-eA-da2"/>
+                        <outlet property="telTextField" destination="9vm-do-JMj" id="EiQ-oc-H6x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzq-vB-0d7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -286,7 +347,7 @@
                                 <rect key="frame" x="103" y="161" width="20" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                 <connections>
                                     <action selector="keyboardReturnTapped:" destination="bpc-9c-DxP" eventType="editingDidEndOnExit" id="urY-Ty-qEo"/>
                                 </connections>

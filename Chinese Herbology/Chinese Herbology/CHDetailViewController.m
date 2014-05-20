@@ -7,11 +7,13 @@
 //
 
 #import "CHDetailViewController.h"
+#import "CHAppDelegate.h"
 
 
 
 @interface CHDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@property (nonatomic, weak) NSManagedObjectContext *managedObjectContext;
 - (void)configureView;
 @end
 
@@ -45,6 +47,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.managedObjectContext = ((CHAppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
     [self configureView];
 }
 

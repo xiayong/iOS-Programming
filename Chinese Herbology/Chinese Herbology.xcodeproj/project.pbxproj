@@ -27,8 +27,8 @@
 		4926C98B191EA84A003A17AF /* Chinese_HerbologyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C98A191EA84A003A17AF /* Chinese_HerbologyTests.m */; };
 		4926C9A119216241003A17AF /* CHAddPatientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C9A019216241003A17AF /* CHAddPatientViewController.m */; };
 		4926C9A41923EDE6003A17AF /* CHAddMedicineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C9A31923EDE6003A17AF /* CHAddMedicineViewController.m */; };
+		49281698192A970F003AEECF /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 49281697192A970F003AEECF /* Patient.m */; };
 		4960CB891925550700374F1D /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4960CB881925550700374F1D /* Medicine.m */; };
-		4960CB8C1925550800374F1D /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4960CB8B1925550800374F1D /* Patient.m */; };
 		4960CB8F1925550800374F1D /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4960CB8E1925550800374F1D /* Receipt.m */; };
 /* End PBXBuildFile section */
 
@@ -71,10 +71,10 @@
 		4926C9A21923EDE6003A17AF /* CHAddMedicineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAddMedicineViewController.h; sourceTree = "<group>"; };
 		4926C9A31923EDE6003A17AF /* CHAddMedicineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAddMedicineViewController.m; sourceTree = "<group>"; };
 		4926C9A6192545C4003A17AF /* CHConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHConstants.h; sourceTree = "<group>"; };
+		49281696192A970F003AEECF /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = Model/Patient.h; sourceTree = "<group>"; };
+		49281697192A970F003AEECF /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Patient.m; sourceTree = "<group>"; };
 		4960CB871925550700374F1D /* Medicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medicine.h; path = Model/Medicine.h; sourceTree = "<group>"; };
 		4960CB881925550700374F1D /* Medicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medicine.m; path = Model/Medicine.m; sourceTree = "<group>"; };
-		4960CB8A1925550800374F1D /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = Model/Patient.h; sourceTree = "<group>"; };
-		4960CB8B1925550800374F1D /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Patient.m; sourceTree = "<group>"; };
 		4960CB8D1925550800374F1D /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Receipt.h; path = Model/Receipt.h; sourceTree = "<group>"; };
 		4960CB8E1925550800374F1D /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Receipt.m; path = Model/Receipt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,10 +193,10 @@
 			children = (
 				4960CB8D1925550800374F1D /* Receipt.h */,
 				4960CB8E1925550800374F1D /* Receipt.m */,
-				4960CB8A1925550800374F1D /* Patient.h */,
-				4960CB8B1925550800374F1D /* Patient.m */,
 				4960CB871925550700374F1D /* Medicine.h */,
 				4960CB881925550700374F1D /* Medicine.m */,
+				49281696192A970F003AEECF /* Patient.h */,
+				49281697192A970F003AEECF /* Patient.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -302,11 +302,11 @@
 				4926C965191EA84A003A17AF /* main.m in Sources */,
 				4926C975191EA84A003A17AF /* CHDetailViewController.m in Sources */,
 				4926C9A119216241003A17AF /* CHAddPatientViewController.m in Sources */,
-				4960CB8C1925550800374F1D /* Patient.m in Sources */,
 				4960CB891925550700374F1D /* Medicine.m in Sources */,
 				4926C972191EA84A003A17AF /* CHMasterViewController.m in Sources */,
 				4960CB8F1925550800374F1D /* Receipt.m in Sources */,
 				4926C9A41923EDE6003A17AF /* CHAddMedicineViewController.m in Sources */,
+				49281698192A970F003AEECF /* Patient.m in Sources */,
 				4926C96F191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld in Sources */,
 				4926C969191EA84A003A17AF /* CHAppDelegate.m in Sources */,
 			);
