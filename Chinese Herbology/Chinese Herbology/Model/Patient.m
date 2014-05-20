@@ -2,7 +2,7 @@
 //  Patient.m
 //  Chinese Herbology
 //
-//  Created by Andrew on 05-16-14.
+//  Created by Andrew on 05-20-14.
 //  Copyright (c) 2014年 FREE. All rights reserved.
 //
 
@@ -13,11 +13,12 @@
 @implementation Patient
 
 @dynamic email;
-@dynamic firstName;
+@dynamic fname;
 @dynamic history;
-@dynamic lastName;
+@dynamic lname;
 @dynamic pid;
 @dynamic tel;
+@dynamic age;
 @dynamic receipts;
 
 @end

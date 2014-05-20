@@ -11,10 +11,11 @@
         <relationship name="receipts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Receipt" inverseName="medicine" inverseEntity="Receipt" syncable="YES"/>
     </entity>
     <entity name="Patient" representedClassName="Patient" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="199" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="firstName" attributeType="String" syncable="YES"/>
+        <attribute name="fname" attributeType="String" syncable="YES"/>
         <attribute name="history" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lastName" attributeType="String" syncable="YES"/>
+        <attribute name="lname" attributeType="String" syncable="YES"/>
         <attribute name="pid" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="receipts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Receipt" inverseName="patient" inverseEntity="Receipt" syncable="YES"/>
@@ -29,7 +30,7 @@
     </entity>
     <elements>
         <element name="Medicine" positionX="-63" positionY="72" width="135" height="165"/>
-        <element name="Patient" positionX="322" positionY="72" width="128" height="148"/>
+        <element name="Patient" positionX="322" positionY="72" width="128" height="163"/>
         <element name="Receipt" positionX="133" positionY="72" width="128" height="135"/>
     </elements>
 </model>
