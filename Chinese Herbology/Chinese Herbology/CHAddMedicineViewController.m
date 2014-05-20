@@ -77,6 +77,7 @@
         [notificationCenter postNotificationName:@kNotificationAddNewMedicineName object:self userInfo:dic];
     }];
 }
+
 - (IBAction)keyboardReturnTapped:(UITextField *)sender {
     //[sender resignFirstResponder];
     if (self.medicineNameTextField == sender)
@@ -97,6 +98,17 @@
                 });
             }
         });
+    }
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSArray *textFieldNames = @[@"medicineName",@"medicineEnglishName",@"medicinePrice",@"medicineNoText"];
+    for (NSString *name in textFieldNames) {
+        UITextField *textFiled = (UITextField *) [self valueForKey:[name stringByAppendingString:@"TextField"]];
+        if ([textFiled isFirstResponder]) {
+            [textFiled resignFirstResponder];
+            return;
+        }
     }
 }
 @end
