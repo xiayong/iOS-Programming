@@ -13,7 +13,7 @@
 - (IBAction)saveButtonTapped:(UIBarButtonItem *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *lnameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *fnameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *emialTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *telTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
 

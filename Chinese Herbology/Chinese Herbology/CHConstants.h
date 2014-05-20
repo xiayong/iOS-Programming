@@ -9,7 +9,8 @@
 #ifndef Chinese_Herbology_CHConstants_h
 #define Chinese_Herbology_CHConstants_h
 
-#define kNotificationAddNewMedicineName     "Add new medicine"
+#define kNotificationAddNewMedicineName     "ADD_NEW_MEDICINE"
+#define kNotificationAddNewPatientName      "ADD_NEW_PATIENT"
 
 #define kMedicineDetialURLPrefix            "http://libproject.hkbu.edu.hk/was40/detail?channelid=47953&lang=chs&searchword=pid="
 #define kMedicineImageURL                   "http://libproject.hkbu.edu.hk/trsimage/mmd/%@.jpg"

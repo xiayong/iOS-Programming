@@ -7,6 +7,7 @@
 //
 
 #import "CHAddPatientViewController.h"
+#import "CHConstants.h"
 
 @interface CHAddPatientViewController () <UITextFieldDelegate>
 
@@ -51,6 +52,64 @@
 }
 
 - (IBAction)saveButtonTapped:(UIBarButtonItem *)sender {
+    NSString *fname = [self.fnameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *lname = [self.lnameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *email = [self.emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *tel = [self.telTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *age = [self.ageTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    BOOL invalid = NO;
+    NSString *msg = nil;
+    NSInteger var = -1;
+    if (age.length) {
+        NSScanner *scanner = [NSScanner scannerWithString:age];
+        if (!([scanner scanInteger:&var] && [scanner isAtEnd])) {
+            invalid = YES;
+            msg = @"Please type the valid patient's age.";
+        }
+    } else
+        age = nil;
+    NSString *telRegex = @"^[+]?[0-9]{5,15}";
+    NSPredicate *contactNoPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", telRegex];
+    if (tel.length ) {
+        if (![contactNoPredicate evaluateWithObject:tel]) {
+            invalid = YES;
+            msg = @"Please type the valid telephone number.";
+        }
+    } else
+        tel = nil;
+    NSString *emailRegex = @"^\\w+((\\-\\w+)|(\\.\\w+))*@[A-Za-z0-9]+((\\.|\\-)[A-Za-z0-9]+)*.[A-Za-z0-9]+$";
+    NSPredicate *emailPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    if (email.length) {
+        if (![emailPredicate evaluateWithObject:email]) {
+            invalid = YES;
+            msg = @"Please type the valid email.";
+        }
+    } else
+        email = nil;
+    if (!fname.length) {
+        invalid = YES;
+        msg = @"Please type the patient's first name.";
+    }
+    if (!lname.length) {
+        invalid = YES;
+        msg = @"Please type the patient's last name.";
+    }
+    if (invalid) {
+        [[[UIAlertView alloc] initWithTitle:@"Incomplete information" message:msg delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        return;
+    }
+    NSMutableDictionary *patientDict = [NSMutableDictionary dictionary];
+    [patientDict setObject:lname forKey:@"lname"];
+    [patientDict setObject:fname forKey:@"fname"];
+    if (email)
+        [patientDict setObject:email forKey:@"email"];
+    if (tel)
+        [patientDict setObject:tel forKey:@"tel"];
+    if (age)
+        [patientDict setObject:[NSNumber numberWithInteger:var] forKey:@"age"];
+    [self dismissViewControllerAnimated:YES completion:^{
+      [[NSNotificationCenter defaultCenter] postNotificationName:@kNotificationAddNewPatientName object:self userInfo:patientDict];
+    }];
 }
 
 /*

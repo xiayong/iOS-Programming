@@ -198,7 +198,7 @@
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="ageTextField" destination="Hhh-jM-ALj" id="sAA-RR-Tyd"/>
-                        <outlet property="emialTextField" destination="VxW-LS-OjK" id="SDn-nw-pY4"/>
+                        <outlet property="emailTextField" destination="VxW-LS-OjK" id="wp9-uM-tRt"/>
                         <outlet property="fnameTextField" destination="SkJ-wB-8tH" id="aFG-nt-BeU"/>
                         <outlet property="lnameTextField" destination="mgM-LX-oiy" id="9ZV-eA-da2"/>
                         <outlet property="telTextField" destination="9vm-do-JMj" id="EiQ-oc-H6x"/>
