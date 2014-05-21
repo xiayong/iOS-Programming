@@ -126,12 +126,6 @@
     return nil;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-    self.detailViewController.detailItem = object;
-}
-
 #pragma mark - Fetched results controller
 
 - (NSFetchedResultsController *)fetchedResultsController

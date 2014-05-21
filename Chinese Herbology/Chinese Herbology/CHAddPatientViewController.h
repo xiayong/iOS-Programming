@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Patient;
 
 @interface CHAddPatientViewController : UIViewController
 - (IBAction)cancelButtonTapped:(UIBarButtonItem *)sender;
@@ -16,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *telTextField;
 @property (weak, nonatomic) IBOutlet UITextField *ageTextField;
+
+@property (assign, nonatomic) NSInteger mode;
+@property (weak, atomic) Patient *currentPatient;
 
 - (IBAction)textFieldReturnKeyTapped:(UITextField *)sender;
 @end

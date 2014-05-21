@@ -8,8 +8,11 @@
 
 #import "CHAddPatientViewController.h"
 #import "CHConstants.h"
+#import "Patient.h"
 
 @interface CHAddPatientViewController () <UITextFieldDelegate>
+
+- (void)configureView;
 
 @end
 
@@ -28,6 +31,18 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self configureView];
+}
+
+- (void)configureView {
+    if (self.mode) {
+        self.fnameTextField.text = self.currentPatient.fname;
+        self.lnameTextField.text = self.currentPatient.lname;
+        self.emailTextField.text = self.currentPatient.email;
+        self.telTextField.text = self.currentPatient.tel;
+        self.ageTextField.text = [self.currentPatient.age debugDescription];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,16 +114,29 @@
         return;
     }
     NSMutableDictionary *patientDict = [NSMutableDictionary dictionary];
-    [patientDict setObject:lname forKey:@"lname"];
-    [patientDict setObject:fname forKey:@"fname"];
-    if (email)
-        [patientDict setObject:email forKey:@"email"];
-    if (tel)
-        [patientDict setObject:tel forKey:@"tel"];
-    if (age)
-        [patientDict setObject:[NSNumber numberWithInteger:var] forKey:@"age"];
+    [patientDict setObject:[NSNumber numberWithInteger:self.mode] forKey:@"mode"];
+    if (self.mode) {
+        self.currentPatient.fname = fname;
+        self.currentPatient.lname = lname;
+        if (email)
+            self.currentPatient.email = email;
+        if (tel)
+            self.currentPatient.tel = tel;
+        if (age)
+            self.currentPatient.age = [NSNumber numberWithInteger:var];
+    } else {
+        [patientDict setObject:lname forKey:@"lname"];
+        [patientDict setObject:fname forKey:@"fname"];
+        if (email)
+            [patientDict setObject:email forKey:@"email"];
+        if (tel)
+            [patientDict setObject:tel forKey:@"tel"];
+        if (age)
+            [patientDict setObject:[NSNumber numberWithInteger:var] forKey:@"age"];
+
+    }
     [self dismissViewControllerAnimated:YES completion:^{
-      [[NSNotificationCenter defaultCenter] postNotificationName:@kNotificationAddNewPatientName object:self userInfo:patientDict];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@kNotificationAddOrUpdatePatientName object:self userInfo:patientDict];
     }];
 }
 
