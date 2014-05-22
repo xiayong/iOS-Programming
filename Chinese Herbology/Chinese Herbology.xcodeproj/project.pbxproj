@@ -28,6 +28,8 @@
 		4926C9A119216241003A17AF /* CHAddPatientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C9A019216241003A17AF /* CHAddPatientViewController.m */; };
 		4926C9A41923EDE6003A17AF /* CHAddMedicineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926C9A31923EDE6003A17AF /* CHAddMedicineViewController.m */; };
 		49281698192A970F003AEECF /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 49281697192A970F003AEECF /* Patient.m */; };
+		4928169B192E7A5C003AEECF /* CHSelectDatePopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4928169A192E7A5C003AEECF /* CHSelectDatePopoverController.m */; };
+		4928169E192E7A84003AEECF /* CHSelectPatientPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4928169D192E7A84003AEECF /* CHSelectPatientPopoverController.m */; };
 		4960CB891925550700374F1D /* Medicine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4960CB881925550700374F1D /* Medicine.m */; };
 		4960CB8F1925550800374F1D /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 4960CB8E1925550800374F1D /* Receipt.m */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,10 @@
 		4926C9A6192545C4003A17AF /* CHConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CHConstants.h; sourceTree = "<group>"; };
 		49281696192A970F003AEECF /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Patient.h; path = Model/Patient.h; sourceTree = "<group>"; };
 		49281697192A970F003AEECF /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Patient.m; path = Model/Patient.m; sourceTree = "<group>"; };
+		49281699192E7A5C003AEECF /* CHSelectDatePopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSelectDatePopoverController.h; sourceTree = "<group>"; };
+		4928169A192E7A5C003AEECF /* CHSelectDatePopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSelectDatePopoverController.m; sourceTree = "<group>"; };
+		4928169C192E7A84003AEECF /* CHSelectPatientPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSelectPatientPopoverController.h; sourceTree = "<group>"; };
+		4928169D192E7A84003AEECF /* CHSelectPatientPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSelectPatientPopoverController.m; sourceTree = "<group>"; };
 		4960CB871925550700374F1D /* Medicine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Medicine.h; path = Model/Medicine.h; sourceTree = "<group>"; };
 		4960CB881925550700374F1D /* Medicine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Medicine.m; path = Model/Medicine.m; sourceTree = "<group>"; };
 		4960CB8D1925550800374F1D /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Receipt.h; path = Model/Receipt.h; sourceTree = "<group>"; };
@@ -152,6 +158,10 @@
 				4926C9A019216241003A17AF /* CHAddPatientViewController.m */,
 				4926C9A21923EDE6003A17AF /* CHAddMedicineViewController.h */,
 				4926C9A31923EDE6003A17AF /* CHAddMedicineViewController.m */,
+				49281699192E7A5C003AEECF /* CHSelectDatePopoverController.h */,
+				4928169A192E7A5C003AEECF /* CHSelectDatePopoverController.m */,
+				4928169C192E7A84003AEECF /* CHSelectPatientPopoverController.h */,
+				4928169D192E7A84003AEECF /* CHSelectPatientPopoverController.m */,
 				4926C976191EA84A003A17AF /* Images.xcassets */,
 				4926C96D191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld */,
 				4926C95F191EA84A003A17AF /* Supporting Files */,
@@ -303,9 +313,11 @@
 				4926C975191EA84A003A17AF /* CHDetailViewController.m in Sources */,
 				4926C9A119216241003A17AF /* CHAddPatientViewController.m in Sources */,
 				4960CB891925550700374F1D /* Medicine.m in Sources */,
+				4928169B192E7A5C003AEECF /* CHSelectDatePopoverController.m in Sources */,
 				4926C972191EA84A003A17AF /* CHMasterViewController.m in Sources */,
 				4960CB8F1925550800374F1D /* Receipt.m in Sources */,
 				4926C9A41923EDE6003A17AF /* CHAddMedicineViewController.m in Sources */,
+				4928169E192E7A84003AEECF /* CHSelectPatientPopoverController.m in Sources */,
 				49281698192A970F003AEECF /* Patient.m in Sources */,
 				4926C96F191EA84A003A17AF /* Chinese_Herbology.xcdatamodeld in Sources */,
 				4926C969191EA84A003A17AF /* CHAppDelegate.m in Sources */,

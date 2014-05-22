@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CHDetailViewController : UIViewController <UISplitViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *patientNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *patientTelTextField;
+@property (weak, nonatomic) IBOutlet UITextField *receiptDateTextField;
 
 @end
