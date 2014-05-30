@@ -21,7 +21,7 @@
         <relationship name="receipts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Receipt" inverseName="patient" inverseEntity="Receipt" syncable="YES"/>
     </entity>
     <entity name="Receipt" representedClassName="Receipt" syncable="YES">
-        <attribute name="createDate" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="createDate" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="price" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="quantity" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="rid" attributeType="String" indexed="YES" syncable="YES"/>

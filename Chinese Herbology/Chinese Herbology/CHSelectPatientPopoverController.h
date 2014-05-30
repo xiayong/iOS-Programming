@@ -12,5 +12,5 @@
 @interface CHSelectPatientPopoverController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, weak) id delegate;
-@property (nonatomic, strong) NSArray *patients;
+@property (nonatomic, weak) NSArray *patients;
 @end

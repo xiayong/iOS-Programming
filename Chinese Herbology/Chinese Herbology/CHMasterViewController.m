@@ -14,6 +14,8 @@
 
 @interface CHMasterViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)handleMedicineDrag:(UIPanGestureRecognizer *)gestureRecognizer;
+@property (nonatomic, strong) Medicine *dragingMedicine;
 @end
 
 @implementation CHMasterViewController
@@ -31,11 +33,11 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    //self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (CHDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(insertNewObject:) name:@kNotificationAddNewMedicineName object:nil];
+    UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleMedicineDrag:)];
+    [self.tableView addGestureRecognizer:gestureRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +45,54 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)handleMedicineDrag:(UIPanGestureRecognizer *)gestureRecognizer {
+    UIGestureRecognizerState state = [gestureRecognizer state];
+    static UIView *tempDragingView;
+    static CGPoint startPoint;
+    if (state == UIGestureRecognizerStateBegan) {
+        CGPoint location = [gestureRecognizer locationInView:self.tableView];
+        NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width - 50, cell.frame.size.height)];
+        tempDragingView = [[UIView alloc] initWithFrame:label.frame];
+        startPoint = [gestureRecognizer locationInView:[[[UIApplication sharedApplication].delegate window].subviews lastObject]];
+        tempDragingView.center = startPoint;
+        tempDragingView.backgroundColor = [UIColor grayColor];
+        tempDragingView.alpha = 0.5;
+        Medicine *medicine = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        self.dragingMedicine = medicine;
+        label.text = medicine.name;
+        label.textAlignment = NSTextAlignmentCenter;
+        [tempDragingView addSubview:label];
+        [[[[UIApplication sharedApplication].delegate window].subviews lastObject] addSubview:tempDragingView];
+    } else if (state == UIGestureRecognizerStateChanged)
+        tempDragingView.center = [gestureRecognizer locationInView:[[[UIApplication sharedApplication].delegate window].subviews lastObject]];
+    else {
+        
+        CGPoint location = [gestureRecognizer locationInView:self.detailViewController.view];
+        if (state == UIGestureRecognizerStateEnded) {
+            if (CGRectContainsPoint(self.detailViewController.herbologyTableView.frame, location)) {
+                [tempDragingView removeFromSuperview];
+                tempDragingView = nil;
+                [self.detailViewController addMedicineToReceipt:self.dragingMedicine];
+            }
+            else {
+                [UIView animateWithDuration:0.5f animations:^{
+                    tempDragingView.center = startPoint;
+                } completion:^(BOOL finished) {
+                    [tempDragingView removeFromSuperview];
+                    tempDragingView = nil;
+                }];
+            }
+        } else {
+            [tempDragingView removeFromSuperview];
+            tempDragingView = nil;
+        }
+        self.dragingMedicine = nil;
+    }
+}
+
 
 - (void)insertNewObject:(NSNotification *)sender
 {

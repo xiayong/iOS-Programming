@@ -12,7 +12,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.delegate setValue:[self.patients objectAtIndex:0] forKeyPath:@"selectedPatient"];
+    [self.delegate setValue:self.patients.firstObject forKeyPath:@"selectedPatient"];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
