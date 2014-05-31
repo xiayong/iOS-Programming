@@ -136,7 +136,7 @@
 
     }
     [self dismissViewControllerAnimated:YES completion:^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:@kNotificationAddOrUpdatePatientName object:self userInfo:patientDict];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationAddOrUpdatePatientName object:self userInfo:patientDict];
     }];
 }
 

@@ -97,9 +97,8 @@
         if (!([scanner scanInt:&count] && [scanner isAtEnd]))
             [[[UIAlertView alloc] initWithTitle:@"Chinese Herbology" message:@"The count invalid." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
         else {
-            NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.appDelegate.managedObjectContext];
             NSFetchRequest *request = [[NSFetchRequest alloc] init];
-            request.entity = entityDescription;
+            request.entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.appDelegate.managedObjectContext];
             request.predicate = [NSPredicate predicateWithFormat:@"medicine.mid = %@ AND patient.pid = %@",self.dragingMedicine.mid, self.selectedPatient.pid];
             NSError *error;
             Receipt *receipt;
@@ -160,7 +159,7 @@
     _appDelegate = [UIApplication sharedApplication].delegate;
     [self configureView];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addOrUpdatePatient:) name:@kNotificationAddOrUpdatePatientName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addOrUpdatePatient:) name:kNotificationAddOrUpdatePatientName object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -190,8 +189,7 @@
     } else {
         [destinationViewController setValue:self forKey:@"delegate"];
         if ([@"SelectPatient" isEqualToString:segue.identifier]) {
-            NSFetchRequest *request = [[NSFetchRequest alloc] init];
-            request.entity = [NSEntityDescription entityForName:@"Patient" inManagedObjectContext:self.appDelegate.managedObjectContext];
+            NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Patient"];
             NSError *error;
             NSArray *patients = [self.appDelegate.managedObjectContext executeFetchRequest:request error:&error];
             self.patients = [NSMutableArray arrayWithArray:patients];
@@ -214,10 +212,6 @@
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [textField resignFirstResponder];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {

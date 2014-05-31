@@ -35,7 +35,7 @@
 
     self.detailViewController = (CHDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(insertNewObject:) name:@kNotificationAddNewMedicineName object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(insertNewObject:) name:kNotificationAddNewMedicineName object:nil];
     UIPanGestureRecognizer *gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleMedicineDrag:)];
     [self.tableView addGestureRecognizer:gestureRecognizer];
 }

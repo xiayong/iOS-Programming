@@ -324,7 +324,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Medicines" id="Zdf-7t-Un8">
+                    <navigationItem key="navigationItem" title="中草药" id="Zdf-7t-Un8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="xOv-oP-4h1">
                             <connections>
                                 <segue destination="bpc-9c-DxP" kind="modal" id="i6h-0H-ggf"/>

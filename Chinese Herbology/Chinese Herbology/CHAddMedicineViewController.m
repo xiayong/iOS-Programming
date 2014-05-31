@@ -74,7 +74,7 @@
     NSLog(@"Posting the notification to save the new medidine - %@.", name);
     [self dismissViewControllerAnimated:YES completion:^{
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-        [notificationCenter postNotificationName:@kNotificationAddNewMedicineName object:self userInfo:dic];
+        [notificationCenter postNotificationName:kNotificationAddNewMedicineName object:self userInfo:dic];
     }];
 }
 
@@ -87,11 +87,11 @@
     else if(self.medicineNoTextField == sender) {
         NSString *medicieNo = [[self.medicineNoTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
         self.medicineNoTextField.text  = medicieNo;
-        self.medicineDetailURL = [@kMedicineDetialURLPrefix stringByAppendingString:medicieNo];
+        self.medicineDetailURL = [kMedicineDetialURLPrefix stringByAppendingString:medicieNo];
         NSURL *detailURL = [NSURL URLWithString:self.medicineDetailURL];
         [self.medicineWebView loadRequest:[NSURLRequest requestWithURL:detailURL]];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@kMedicineImageURL, medicieNo]]];
+            NSData *data=[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:kMedicineImageURL, medicieNo]]];
             if (data) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.medicineImageView.image = [[UIImage alloc] initWithData:data];
