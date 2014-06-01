@@ -214,6 +214,10 @@
     self.masterPopoverController = nil;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [textField resignFirstResponder];
+}
+
 - (void)textViewDidEndEditing:(UITextView *)textView {
     NSString *history = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     self.selectedPatient.history = history.length ? history : nil;
