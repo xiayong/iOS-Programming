@@ -102,7 +102,7 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSArray *textFieldNames = @[@"medicineName",@"medicineEnglishName",@"medicinePrice",@"medicineNoText"];
+    NSArray *textFieldNames = @[@"medicineName",@"medicineEnglishName",@"medicinePrice",@"medicineNo"];
     for (NSString *name in textFieldNames) {
         UITextField *textFiled = (UITextField *) [self valueForKey:[name stringByAppendingString:@"TextField"]];
         if ([textFiled isFirstResponder]) {
