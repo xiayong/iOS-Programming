@@ -87,7 +87,7 @@
     else if(self.medicineNoTextField == sender) {
         NSString *medicieNo = [[self.medicineNoTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
         self.medicineNoTextField.text  = medicieNo;
-        self.medicineDetailURL = [kMedicineDetialURLPrefix stringByAppendingString:medicieNo];
+        self.medicineDetailURL = [NSString stringWithFormat:kMedicineDetialURL, medicieNo];
         NSURL *detailURL = [NSURL URLWithString:self.medicineDetailURL];
         [self.medicineWebView loadRequest:[NSURLRequest requestWithURL:detailURL]];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

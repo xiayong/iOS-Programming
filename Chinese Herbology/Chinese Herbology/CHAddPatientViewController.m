@@ -149,7 +149,7 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSArray *textFieldNames = @[@"lname",@"fname",@"emial",@"tel",@"age"];
+    NSArray *textFieldNames = @[@"lname",@"fname",@"email",@"tel",@"age"];
     for (NSString *name in textFieldNames) {
         UITextField *textField = (UITextField *)[self valueForKey:[NSString stringWithFormat:@"%@TextField", name]];
         [textField resignFirstResponder];
